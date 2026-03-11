@@ -1,34 +1,36 @@
-# Yogesh Chauhan — Portfolio
+# Yogesh Chauhan — Portfolio v2 (Light Theme)
 
 **Live:** [yogesh-chauhan-ai.github.io](https://yogesh-chauhan-ai.github.io)
 
-Python & AI Engineer with 5+ years of experience in Django, FastAPI, LLMs, RAG pipelines, vector databases, and cloud infrastructure.
+## 🚀 Deploy to GitHub Pages (2 minutes)
 
-## 🚀 Deploy to GitHub Pages
+1. Create GitHub repo named **`yogesh-chauhan-ai.github.io`**
+2. Place your **CV PDF** at `assets/Yogesh_Chauhan_CV.pdf`
+3. Push all files to the `main` branch
+4. Go to **Settings → Pages → Source → main → / (root) → Save**
+5. Live in ~60 seconds
 
-1. Create a GitHub repo named exactly: `yogesh-chauhan-ai.github.io`
-2. Push all files in this folder to the **`main`** branch of that repo
-3. Go to **Settings → Pages → Source → Deploy from branch → main → / (root)**
-4. Your site will be live at `https://yogesh-chauhan-ai.github.io` within ~60 seconds
+## ✏️ Update Content
 
-## 📁 Structure
+Edit **`assets/js/Data.js`** — all info is in one file.
 
-```
-/
-├── index.html          ← main page
-├── assets/
-│   ├── css/style.css   ← styles
-│   ├── js/
-│   │   ├── script.js   ← main logic
-│   │   └── Data.js     ← all your content (edit this to update info)
-│   └── images/         ← SVGs and project images
-└── README.md
+To add a **live URL** to a project, fill in the `liveUrl` field in `Data.js`:
+```js
+liveUrl: "https://your-project.com",  // or leave "" to hide
 ```
 
-## ✏️ To Update Content
+## 📁 Drop in your CV
 
-Edit **`assets/js/Data.js`** — all personal info, projects, skills, and experience are in that single file.
+Replace `assets/Yogesh_Chauhan_CV.pdf` with your actual CV PDF.
+The Download CV button will ask for an email then trigger the download.
 
-## 🛠 Tech
+## Features
 
-Static HTML/CSS/JS — no build step needed. Works directly on GitHub Pages.
+- Light professional theme (DM Serif Display + DM Sans)
+- Sidebar with Download CV (email gate) + Submit Inquiry
+- Project detail modal: role, team, duration, responsibilities, live link
+- Filter tabs on Portfolio: All / AI+LLM / Data+ML / Web App
+- Animated skill bars on Resume tab
+- Inquiry form (in navbar + Contact page + floating modal)
+- Fully responsive (mobile / tablet / desktop)
+- Pure HTML/CSS/JS — no build step, works directly on GitHub Pages
