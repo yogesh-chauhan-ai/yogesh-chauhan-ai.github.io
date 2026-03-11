@@ -8,11 +8,23 @@ export const UserData = {
   website: "https://yogesh-chauhan-ai.github.io",
   linkedin: "https://www.linkedin.com/in/yogesh-python-ai",
   github: "https://github.com/yogesh-chauhan-ai",
-  cvFile: "assets/Yogesh_Chauhan_CV.pdf",
+  cvFile: "assets/Yogesh_Python_CV.pdf",
 };
 
 export const profile = {
-  summary: `Bachelor of Engineering (B.E.) from GTU with <strong>5+ years of experience</strong> as a Python-focused software engineer. Skilled in software development and maintenance with active involvement throughout the full development lifecycle.<br><br>Proficient in <strong>Django, FastAPI, Flask</strong>, and cutting-edge AI/ML technologies including <strong>LLMs, Prompt Engineering, RAG pipelines</strong>, and vector databases. Experienced in cloud infrastructure on AWS with Docker, Kubernetes, and CI/CD via Terraform and GitHub Actions.<br><br>An effective communicator with strong interpersonal, logical thinking, and analytical abilities — capable of identifying requirements and proposing optimal solutions.`,
+  summary: `AI Development Lead focused on transforming cutting-edge Generative AI into scalable, production-grade platforms that drive measurable business impact.<br><br>
+I lead high-performing engineering teams building intelligent AI systems using <strong>Python</strong> as my core stack, bridging the gap between experimental AI innovation and reliable, enterprise-ready deployments.<br><br>
+My expertise spans <strong>GenAI architecture, LLM integrations, RAG pipelines, and agentic AI systems</strong>, enabling autonomous workflows and intelligent decision-making across products and services.<br><br>
+Over the years, I have delivered <strong>13+ backend platforms</strong> and led <strong>5 AI integration initiatives</strong>, helping organizations streamline operations and unlock data value — most notably driving a <strong>65% increase in data efficiency</strong> through the DB Insight platform.<br><br>
+<strong>Key areas of expertise:</strong><br>
+- <strong>AI Platform Architecture</strong> — LLM systems, RAG pipelines, agentic workflows<br>
+- <strong>Backend &amp; API Engineering</strong> — FastAPI, Flask, Django, Dash<br>
+- <strong>AI Infrastructure &amp; Deployment</strong> — Docker, Redis, scalable service architecture<br>
+- <strong>Data Systems</strong> — PostgreSQL, SQL, structured data pipelines<br>
+- <strong>AI Product Engineering</strong> — API integrations, payment systems, intelligent services<br><br>
+I'm particularly interested in advancing <strong>industrial-grade AI agents</strong>, reliability frameworks for GenAI systems, and emerging areas such as <strong>neurosymbolic AI, DSPy, and meta-learning architectures</strong>.<br><br>
+Beyond engineering, I enjoy mentoring teams, sharing knowledge, and exploring new paradigms that move AI systems toward autonomous, reliable decision-making platforms.<br><br>
+Currently open to <strong>Senior AI / GenAI leadership roles in Mumbai or remote</strong>, where I can lead teams building the next generation of intelligent AI platforms.`,
 };
 
 export const services = [
@@ -49,49 +61,80 @@ export const techStack = [
 
 export const education = [
   {
-    degree: "Bachelor of Engineering — Computer Engineering",
+    degree: "Bachelor of Engineering — Information Technology",
     institute: "Gujarat Technological University (GTU)",
-    year: "Graduated 2018",
+    year: "Graduated 2020",
   },
 ];
 
 export const experience = [
   {
-    designation: "Software Engineer — Python & AI",
+    designation: "Development Team Lead",
     company: "PySquad Informatics LLP",
-    year: "Jul 2019 – Present",
+    year: "Mar 2023 – Present · 3 yrs 1 mo",
+    location: "Ahmedabad, Gujarat, India · On-site",
     points: [
-      "Architected and shipped production Python/Django backends across 10+ client projects",
-      "Built AI-powered features using LLMs, RAG pipelines, and vector databases",
-      "Led deployment pipelines with Docker, Kubernetes, and Terraform on AWS",
+      "Driving innovative AI solutions with expertise in Python, data analysis, and AI frameworks.",
+      "Leading high-performing teams, delivering scalable projects, and transforming ideas into impactful applications.",
+      "Experienced in cutting-edge technologies like RAG systems, NLP, and computer vision, ensuring quality and performance in every solution.",
     ],
+    skills: "Team Leadership, Leadership Management and +30 skills",
+  },
+  {
+    designation: "Senior Software Engineer",
+    company: "PySquad Informatics LLP",
+    year: "Jul 2021 – Feb 2023 · 1 yr 8 mos",
+    location: "India · On-site",
+    points: [
+      "Worked on patterns: Factory, Decorator, Singleton, Factory Method, Command, State, Prototype, Adapter, Composite, Builder, Proxy, Chain of Responsibility, Flyweight, Observer, Visitor, Strategy.",
+      "Contributed to building innovative AI-driven solutions, focusing on data analysis, transformation, and seamless integrations.",
+      "Played a key role in designing scalable systems, implementing advanced algorithms, and optimizing performance to deliver impactful results for diverse industries.",
+    ],
+    skills: "Shell Scripting, API Development and +24 skills",
   },
   {
     designation: "Python Developer",
     company: "Treesha Infotech",
-    year: "Jun 2018 – Jun 2019",
+    year: "Jun 2020 – Jun 2021 · 1 yr",
+    location: "Ahmedabad, Gujarat, India",
     points: [
-      "Developed and maintained Django web applications for enterprise clients",
-      "Implemented REST APIs and third-party integrations",
+      "Developed and maintained Django web applications for enterprise clients.",
+      "Implemented REST APIs and third-party integrations.",
     ],
+    skills: "",
   },
 ];
 
 export const skills = [
-  { name: "Python", progress: 92 },
-  { name: "Django", progress: 90 },
-  { name: "FastAPI", progress: 88 },
-  { name: "Flask", progress: 85 },
-  { name: "LLM / Prompt Engineering", progress: 85 },
-  { name: "RAG Pipelines", progress: 80 },
-  { name: "Vector Databases (Pinecone, Qdrant)", progress: 78 },
-  { name: "PostgreSQL / MySQL", progress: 82 },
-  { name: "Redis / ElasticSearch", progress: 75 },
-  { name: "Docker / Kubernetes", progress: 80 },
-  { name: "AWS / Cloud", progress: 75 },
-  { name: "PySpark / Pandas", progress: 78 },
-  { name: "REST API Design", progress: 90 },
-  { name: "CI/CD (Terraform, GitHub Actions)", progress: 74 },
+  // AI & GenAI Core
+  { name: "LLM Integration (GPT-4, Claude, Gemini)", progress: 92 },
+  { name: "Prompt Engineering & Chain-of-Thought", progress: 90 },
+  { name: "RAG Pipelines (Hybrid Search, Re-ranking)", progress: 88 },
+  { name: "Agentic AI & Multi-Agent Systems", progress: 85 },
+  { name: "LangChain / LangGraph", progress: 87 },
+  { name: "Vector Databases (Pinecone, Qdrant, Weaviate)", progress: 85 },
+  { name: "Fine-tuning & RLHF", progress: 75 },
+  { name: "DSPy / Structured Prompting", progress: 70 },
+
+  // Backend & APIs
+  { name: "Python", progress: 95 },
+  { name: "FastAPI", progress: 90 },
+  { name: "Django / DRF", progress: 90 },
+  { name: "Flask / Dash", progress: 85 },
+  { name: "REST API & GraphQL Design", progress: 88 },
+
+  // Data & ML
+  { name: "PySpark / Pandas / NumPy", progress: 82 },
+  { name: "PostgreSQL / MySQL", progress: 84 },
+  { name: "Redis / ElasticSearch", progress: 78 },
+  { name: "MongoDB", progress: 74 },
+
+  // Infrastructure & MLOps
+  { name: "Docker / Kubernetes", progress: 82 },
+  { name: "AWS (EC2, S3, Lambda, Bedrock)", progress: 78 },
+  { name: "CI/CD (Terraform, GitHub Actions)", progress: 76 },
+  { name: "MLflow / Model Monitoring", progress: 72 },
+  { name: "Celery / RabbitMQ", progress: 78 },
 ];
 
 export const projects = [

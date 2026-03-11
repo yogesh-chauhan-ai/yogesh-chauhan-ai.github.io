@@ -12,6 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // =========================================================
   document.querySelector(".profile-summary").innerHTML = profile.summary;
 
+  const readMoreBtn = document.getElementById("readMoreBtn");
+    const profileSummary = document.getElementById("profileSummary");
+
+    readMoreBtn.addEventListener("click", () => {
+      const isExpanded = profileSummary.classList.toggle("expanded");
+      readMoreBtn.classList.toggle("expanded");
+      readMoreBtn.querySelector("span").textContent = isExpanded ? "Show less" : "Read more";
+    });
+
   // Services
   const servicesList = document.getElementById("servicesList");
   services.forEach(s => {
@@ -47,19 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
       <span class="tl-company">${e.institute}</span>
       <span class="tl-year">${e.year}</span>`;
     eduList.appendChild(li);
-  });
-
-  const expList = document.querySelector(".experience-list");
-  experience.forEach(e => {
-    const li = document.createElement("li");
-    li.classList.add("timeline-item");
-    const pts = e.points.map(p => `<li>${p}</li>`).join("");
-    li.innerHTML = `
-      <p class="tl-title">${e.designation}</p>
-      <span class="tl-company">${e.company}</span>
-      <span class="tl-year">${e.year}</span>
-      <ul class="tl-points">${pts}</ul>`;
-    expList.appendChild(li);
   });
 
   const skillsList = document.getElementById("skillsList");
@@ -187,23 +183,23 @@ document.addEventListener("DOMContentLoaded", () => {
   cvModal.addEventListener("click", e => { if (e.target === cvModal) closeModal(cvModal); });
 
   cvForm.addEventListener("submit", e => {
-    e.preventDefault();
-    const email = document.getElementById("cvEmail").value;
-    if (!email) return;
-    // Simulate download — replace href with actual CV path
-    const a = document.createElement("a");
-    a.href = UserData.cvFile;
-    a.download = "Yogesh_Chauhan_CV.pdf";
-    a.click();
-    cvForm.style.display = "none";
-    cvSuccess.style.display = "flex";
-    setTimeout(() => {
-      cvForm.style.display = "flex";
-      cvSuccess.style.display = "none";
-      cvForm.reset();
-      closeModal(cvModal);
-    }, 3000);
-  });
+  e.preventDefault();
+  const a = document.createElement("a");
+  a.href = "assets/Yogesh_Python_CV.pdf";
+  a.target = "_blank";
+  a.rel = "noopener";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  cvForm.style.display = "none";
+  cvSuccess.style.display = "flex";
+  setTimeout(() => {
+    cvForm.style.display = "flex";
+    cvSuccess.style.display = "none";
+    cvForm.reset();
+    closeModal(cvModal);
+  }, 3000);
+});
 
   // =========================================================
   // INQUIRY MODAL
@@ -215,12 +211,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openInquiryModal() { openModal(inquiryModal); }
 
-  document.getElementById("inquiryNavBtn").addEventListener("click", openInquiryModal);
+  document.getElementById("inquiryNavBtn").addEventListener("click", () => {
+      document.querySelectorAll("[data-nav-link]").forEach(l => l.classList.remove("active"));
+      document.querySelectorAll("[data-page]").forEach(p => p.classList.remove("active"));
+      document.querySelector("[data-page='contact']").classList.add("active");
+      document.querySelector("[data-nav-link]:nth-child(4)") // handled below
+      navLinks.forEach(l => { if (l.textContent.trim().toLowerCase() === "contact") l.classList.add("active"); });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   inquiryModalClose.addEventListener("click", () => closeModal(inquiryModal));
   inquiryModal.addEventListener("click", e => { if (e.target === inquiryModal) closeModal(inquiryModal); });
 
-  inquiryModalForm.addEventListener("submit", e => {
-    e.preventDefault();
+  inquiryModalForm.addEventListener("submit", async e => {
+  e.preventDefault();
+  const data = new FormData(inquiryModalForm);
+  const res = await fetch("https://formspree.io/f/mzdjrped", {
+    method: "POST", body: data, headers: { Accept: "application/json" }
+  });
+  if (res.ok) {
     inquiryModalForm.style.display = "none";
     inquirySuccess.style.display = "flex";
     setTimeout(() => {
@@ -229,7 +237,10 @@ document.addEventListener("DOMContentLoaded", () => {
       inquiryModalForm.reset();
       closeModal(inquiryModal);
     }, 3000);
-  });
+  } else {
+    alert("Something went wrong. Please try again.");
+  }
+});
 
   // Contact page inquiry form
   const contactPageForm = document.getElementById("inquiryForm");
@@ -241,17 +252,25 @@ document.addEventListener("DOMContentLoaded", () => {
         formBtn.disabled = !contactPageForm.checkValidity();
       });
     });
-    contactPageForm.addEventListener("submit", e => {
-      e.preventDefault();
-      formBtn.textContent = "✓ Message Sent!";
-      formBtn.style.background = "var(--success)";
-      setTimeout(() => {
-        formBtn.innerHTML = `<ion-icon name="paper-plane-outline"></ion-icon> Send Message`;
-        formBtn.style.background = "";
-        contactPageForm.reset();
-        formBtn.disabled = true;
-      }, 3000);
-    });
+    contactPageForm.addEventListener("submit", async e => {
+  e.preventDefault();
+  const data = new FormData(contactPageForm);
+  const res = await fetch("https://formspree.io/f/mzdjrped", {
+    method: "POST", body: data, headers: { Accept: "application/json" }
+  });
+  if (res.ok) {
+    formBtn.innerHTML = `<ion-icon name="checkmark-outline"></ion-icon> Sent!`;
+    formBtn.style.background = "var(--success)";
+    setTimeout(() => {
+      formBtn.innerHTML = `<ion-icon name="paper-plane-outline"></ion-icon> Send Message`;
+      formBtn.style.background = "";
+      contactPageForm.reset();
+      formBtn.disabled = true;
+    }, 3000);
+  } else {
+    alert("Something went wrong. Please try again.");
+  }
+});
   }
 
   // =========================================================
@@ -311,4 +330,23 @@ document.addEventListener("DOMContentLoaded", () => {
     el.classList.remove("open");
     document.body.style.overflow = "";
   }
+});
+
+
+const expList = document.querySelector(".experience-list");
+experience.forEach(e => {
+  const li = document.createElement("li");
+  li.classList.add("timeline-item");
+  const pts = e.points.map(p => `<li>${p}</li>`).join("");
+  const skillsBadge = e.skills
+    ? `<div class="tl-skills"><ion-icon name="diamond-outline"></ion-icon> ${e.skills}</div>`
+    : "";
+  li.innerHTML = `
+    <p class="tl-title">${e.designation}</p>
+    <span class="tl-company">${e.company}</span>
+    <span class="tl-year">${e.year}</span>
+    ${e.location ? `<span class="tl-location">${e.location}</span>` : ""}
+    <ul class="tl-points">${pts}</ul>
+    ${skillsBadge}`;
+  expList.appendChild(li);
 });

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yogesh Chauhan — Python &amp; AI Engineer</title>
   <meta name="description" content="Python & AI Engineer — Django, FastAPI, LLMs, RAG, Cloud. Based in Ahmedabad, India." />
-  <link rel="shortcut icon" href="assets/images/avatar.svg" type="image/svg+xml" />
+  <link rel="shortcut icon" href="assets/images/Group%20860.png" type="image/png" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +20,7 @@
 
       <div class="sidebar-top">
         <div class="avatar-wrap">
-          <img class="profile_img" src="assets/images/avatar.svg" alt="Yogesh Chauhan" />
+          <img class="profile_img" src="assets/images/Group%20860.png" alt="Yogesh Chauhan" />
           <div class="status-dot"></div>
         </div>
         <h1 class="sidebar-name">Yogesh Chauhan</h1>
@@ -121,8 +121,12 @@
 
         <div class="about-grid">
           <div class="about-text">
-            <p class="profile-summary"></p>
-          </div>
+              <p class="profile-summary" id="profileSummary"></p>
+              <button class="read-more-btn" id="readMoreBtn">
+                <span>Read more</span>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </button>
+            </div>
           <div class="about-stats">
             <div class="stat-card">
               <span class="stat-num">5+</span>
@@ -260,7 +264,7 @@
                 Submit an Inquiry
               </h3>
               <p class="inquiry-sub">Fill in the form below and I'll get back to you within 24 hours.</p>
-              <form class="inquiry-form" id="inquiryForm" data-form>
+                <form class="inquiry-form" id="inquiryForm" data-form action="https://formspree.io/f/mzdjrped" method="POST">
                 <div class="form-row">
                   <div class="form-field">
                     <label class="form-label">Full Name <span class="req">*</span></label>
@@ -368,12 +372,8 @@
         </button>
       </div>
       <div class="modal-body">
-        <p class="cv-intro">Please enter your email address to download Yogesh's CV. Your email will not be used for marketing.</p>
+<!--        <p class="cv-intro">Please enter your email address to download Yogesh's CV. Your email will not be used for marketing.</p>-->
         <form class="cv-form" id="cvForm">
-          <div class="form-field">
-            <label class="form-label">Email Address <span class="req">*</span></label>
-            <input type="email" id="cvEmail" class="form-input" placeholder="your@email.com" required />
-          </div>
           <button type="submit" class="btn-submit">
             <ion-icon name="download-outline"></ion-icon>
             Download CV
@@ -397,7 +397,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form class="inquiry-form" id="inquiryModalForm">
+          <form class="inquiry-form" id="inquiryModalForm" action="https://formspree.io/f/mzdjrped" method="POST">
           <div class="form-field">
             <label class="form-label">Full Name <span class="req">*</span></label>
             <input type="text" name="name" class="form-input" placeholder="Your Name" required />
