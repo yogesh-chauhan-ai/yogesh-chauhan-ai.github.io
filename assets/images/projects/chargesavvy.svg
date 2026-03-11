@@ -1,17 +1,116 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300">
-  <rect width="480" height="300" fill="#ecfdf5"/>
-  <rect x="0" y="0" width="480" height="5" fill="#059669"/>
-  <rect x="24" y="24" width="56" height="56" rx="14" fill="#059669" opacity="0.12"/>
-  <text x="52" y="62" text-anchor="middle" font-size="32">🏪</text>
-  <text x="96" y="52" font-size="18" font-weight="700" fill="#059669" font-family="Georgia, serif">ChargeSavvy</text>
-  <text x="96" y="70" font-size="11" fill="#64748b" font-family="Georgia, serif">yogesh-chauhan-ai.github.io</text>
-  <rect x="24" y="100" width="432" height="1" fill="#059669" opacity="0.15"/>
-  <rect x="24" y="130" width="220" height="10" rx="5" fill="#059669" opacity="0.15"/>
-  <rect x="24" y="150" width="340" height="8" rx="4" fill="#059669" opacity="0.1"/>
-  <rect x="24" y="168" width="280" height="8" rx="4" fill="#059669" opacity="0.1"/>
-  <rect x="24" y="186" width="180" height="8" rx="4" fill="#059669" opacity="0.08"/>
-  <rect x="24" y="220" width="80" height="28" rx="6" fill="#059669" opacity="0.15"/>
-  <rect x="116" y="220" width="80" height="28" rx="6" fill="#059669" opacity="0.1"/>
-  <rect x="208" y="220" width="80" height="28" rx="6" fill="#059669" opacity="0.1"/>
-  <rect x="24" y="265" width="432" height="2" rx="1" fill="#059669" opacity="0.2"/>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0fdf4"/>
+      <stop offset="100%" style="stop-color:#dcfce7"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+    <linearGradient id="dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <filter id="s">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#059669" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <rect width="480" height="300" fill="url(#bg)"/>
+  <rect x="0" y="0" width="480" height="4" fill="url(#green)"/>
+
+  <!-- POS Terminal -->
+  <g filter="url(#s)">
+    <!-- Screen -->
+    <rect x="28" y="24" width="220" height="246" rx="14" fill="url(#dark)"/>
+    <rect x="36" y="32" width="204" height="180" rx="8" fill="#0f172a"/>
+
+    <!-- Screen UI -->
+    <rect x="36" y="32" width="204" height="28" rx="8" fill="#1e293b"/>
+    <text x="138" y="50" text-anchor="middle" font-size="10" fill="white" font-family="sans-serif" font-weight="bold">ChargeSavvy POS</text>
+
+    <!-- Order items -->
+    <rect x="44" y="68" width="188" height="16" rx="4" fill="#1e293b"/>
+    <text x="50" y="79" font-size="7.5" fill="#94a3b8" font-family="sans-serif">Margherita Pizza x2</text>
+    <text x="210" y="79" text-anchor="end" font-size="7.5" fill="white" font-family="sans-serif">£24.00</text>
+
+    <rect x="44" y="88" width="188" height="16" rx="4" fill="#1e293b" opacity="0.5"/>
+    <text x="50" y="99" font-size="7.5" fill="#94a3b8" font-family="sans-serif">Garlic Bread x1</text>
+    <text x="210" y="99" text-anchor="end" font-size="7.5" fill="white" font-family="sans-serif">£4.50</text>
+
+    <rect x="44" y="108" width="188" height="16" rx="4" fill="#1e293b"/>
+    <text x="50" y="119" font-size="7.5" fill="#94a3b8" font-family="sans-serif">Coca-Cola x3</text>
+    <text x="210" y="119" text-anchor="end" font-size="7.5" fill="white" font-family="sans-serif">£6.75</text>
+
+    <rect x="44" y="128" width="188" height="16" rx="4" fill="#1e293b" opacity="0.5"/>
+    <text x="50" y="139" font-size="7.5" fill="#94a3b8" font-family="sans-serif">Tiramisu x1</text>
+    <text x="210" y="139" text-anchor="end" font-size="7.5" fill="white" font-family="sans-serif">£6.50</text>
+
+    <line x1="44" y1="152" x2="232" y2="152" stroke="#334155" stroke-width="1"/>
+    <text x="50" y="166" font-size="9" fill="#94a3b8" font-family="sans-serif">Subtotal</text>
+    <text x="210" y="166" text-anchor="end" font-size="9" fill="white" font-family="sans-serif">£41.75</text>
+    <text x="50" y="180" font-size="9" fill="#94a3b8" font-family="sans-serif">VAT (20%)</text>
+    <text x="210" y="180" text-anchor="end" font-size="9" fill="#94a3b8" font-family="sans-serif">£8.35</text>
+    <text x="50" y="198" font-size="11" fill="white" font-family="Georgia,serif" font-weight="bold">TOTAL</text>
+    <text x="210" y="198" text-anchor="end" font-size="14" fill="#10b981" font-family="Georgia,serif" font-weight="bold">£50.10</text>
+
+    <!-- Payment buttons -->
+    <rect x="44" y="208" width="88" height="28" rx="8" fill="url(#green)"/>
+    <text x="88" y="225" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif" font-weight="bold">💳 Card</text>
+
+    <rect x="140" y="208" width="88" height="28" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="184" y="225" text-anchor="middle" font-size="9" fill="#94a3b8" font-family="sans-serif">💵 Cash</text>
+
+    <!-- Home indicator -->
+    <rect x="110" y="250" width="56" height="4" rx="2" fill="#334155"/>
+  </g>
+
+  <!-- Stats panel -->
+  <g filter="url(#s)">
+    <rect x="264" y="24" width="200" height="246" rx="14" fill="white" stroke="#d1fae5" stroke-width="1"/>
+    <rect x="264" y="24" width="200" height="30" rx="14" fill="url(#green)"/>
+    <rect x="264" y="42" width="200" height="12" rx="0" fill="url(#green)"/>
+    <text x="364" y="44" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif" font-weight="bold">Today's Summary</text>
+
+    <text x="278" y="72" font-size="8" fill="#94a3b8" font-family="sans-serif">Total Revenue</text>
+    <text x="278" y="88" font-size="22" fill="#059669" font-family="Georgia,serif" font-weight="bold">£8,420</text>
+
+    <line x1="278" y1="96" x2="452" y2="96" stroke="#f1f5f9" stroke-width="1"/>
+
+    <!-- Mini stats -->
+    <text x="278" y="110" font-size="8" fill="#94a3b8" font-family="sans-serif">Orders</text>
+    <text x="278" y="124" font-size="14" fill="#1e293b" font-family="Georgia,serif" font-weight="bold">284</text>
+    <text x="380" y="110" font-size="8" fill="#94a3b8" font-family="sans-serif">Avg. Bill</text>
+    <text x="380" y="124" font-size="14" fill="#1e293b" font-family="Georgia,serif" font-weight="bold">£29.6</text>
+
+    <line x1="278" y1="132" x2="452" y2="132" stroke="#f1f5f9" stroke-width="1"/>
+
+    <!-- Payment breakdown -->
+    <text x="278" y="146" font-size="8" fill="#475569" font-family="sans-serif" font-weight="bold">Payment Methods</text>
+    <rect x="278" y="152" width="164" height="8" rx="4" fill="#f1f5f9"/>
+    <rect x="278" y="152" width="114" height="8" rx="4" fill="url(#green)"/>
+    <text x="278" y="172" font-size="7.5" fill="#059669" font-family="sans-serif">● Card 70%</text>
+    <text x="340" y="172" font-size="7.5" fill="#94a3b8" font-family="sans-serif">● Cash 30%</text>
+
+    <!-- Hourly mini bars -->
+    <text x="278" y="188" font-size="8" fill="#475569" font-family="sans-serif" font-weight="bold">Hourly Activity</text>
+    <rect x="278" y="196" width="10" height="18" rx="2" fill="#059669" opacity="0.4"/>
+    <rect x="292" y="192" width="10" height="22" rx="2" fill="#059669" opacity="0.5"/>
+    <rect x="306" y="186" width="10" height="28" rx="2" fill="#059669" opacity="0.7"/>
+    <rect x="320" y="182" width="10" height="32" rx="2" fill="#059669" opacity="0.9"/>
+    <rect x="334" y="188" width="10" height="26" rx="2" fill="#059669" opacity="0.7"/>
+    <rect x="348" y="194" width="10" height="20" rx="2" fill="#059669" opacity="0.5"/>
+    <rect x="362" y="190" width="10" height="24" rx="2" fill="#059669" opacity="0.6"/>
+    <rect x="376" y="184" width="10" height="30" rx="2" fill="#059669" opacity="0.8"/>
+    <rect x="390" y="196" width="10" height="18" rx="2" fill="#059669" opacity="0.4"/>
+    <rect x="404" y="193" width="10" height="21" rx="2" fill="#059669" opacity="0.5"/>
+    <rect x="418" y="187" width="10" height="27" rx="2" fill="#059669" opacity="0.7"/>
+    <rect x="432" y="182" width="10" height="32" rx="2" fill="#059669" opacity="0.9"/>
+
+    <!-- Locations badge -->
+    <rect x="278" y="234" width="164" height="28" rx="8" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+    <text x="360" y="247" text-anchor="middle" font-size="9" fill="#059669" font-family="sans-serif" font-weight="bold">700+ Active Locations</text>
+    <text x="360" y="258" text-anchor="middle" font-size="7.5" fill="#94a3b8" font-family="sans-serif">UK &amp; USA · Django · Stripe</text>
+  </g>
 </svg>

@@ -1,17 +1,113 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300">
-  <rect width="480" height="300" fill="#f0ebff"/>
-  <rect x="0" y="0" width="480" height="5" fill="#7c3aed"/>
-  <rect x="24" y="24" width="56" height="56" rx="14" fill="#7c3aed" opacity="0.12"/>
-  <text x="52" y="62" text-anchor="middle" font-size="32">📝</text>
-  <text x="96" y="52" font-size="18" font-weight="700" fill="#7c3aed" font-family="Georgia, serif">Assessment</text>
-  <text x="96" y="70" font-size="11" fill="#64748b" font-family="Georgia, serif">yogesh-chauhan-ai.github.io</text>
-  <rect x="24" y="100" width="432" height="1" fill="#7c3aed" opacity="0.15"/>
-  <rect x="24" y="130" width="220" height="10" rx="5" fill="#7c3aed" opacity="0.15"/>
-  <rect x="24" y="150" width="340" height="8" rx="4" fill="#7c3aed" opacity="0.1"/>
-  <rect x="24" y="168" width="280" height="8" rx="4" fill="#7c3aed" opacity="0.1"/>
-  <rect x="24" y="186" width="180" height="8" rx="4" fill="#7c3aed" opacity="0.08"/>
-  <rect x="24" y="220" width="80" height="28" rx="6" fill="#7c3aed" opacity="0.15"/>
-  <rect x="116" y="220" width="80" height="28" rx="6" fill="#7c3aed" opacity="0.1"/>
-  <rect x="208" y="220" width="80" height="28" rx="6" fill="#7c3aed" opacity="0.1"/>
-  <rect x="24" y="265" width="432" height="2" rx="1" fill="#7c3aed" opacity="0.2"/>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f3ff"/>
+      <stop offset="100%" style="stop-color:#ede9fe"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a56db"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+    <filter id="s">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#7c3aed" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="480" height="300" fill="url(#bg)"/>
+  <rect x="0" y="0" width="480" height="4" fill="url(#purple)"/>
+
+  <!-- Assessment form panel -->
+  <g filter="url(#s)">
+    <rect x="16" y="18" width="260" height="268" rx="12" fill="white" stroke="#ede9fe" stroke-width="1"/>
+    <rect x="16" y="18" width="260" height="36" rx="12" fill="url(#purple)"/>
+    <rect x="16" y="42" width="260" height="12" rx="0" fill="url(#purple)"/>
+    <text x="146" y="40" text-anchor="middle" font-size="10" fill="white" font-family="sans-serif" font-weight="bold">Python Fundamentals Assessment</text>
+
+    <!-- Question 1 -->
+    <rect x="28" y="64" width="236" height="60" rx="8" fill="#f5f3ff"/>
+    <text x="38" y="78" font-size="8" fill="#7c3aed" font-family="sans-serif" font-weight="bold">Q1. What is a Python decorator?</text>
+    <rect x="38" y="84" width="200" height="12" rx="6" fill="white" stroke="#ddd6fe" stroke-width="1"/>
+    <rect x="38" y="84" width="130" height="12" rx="6" fill="#ddd6fe"/>
+    <rect x="38" y="100" width="200" height="12" rx="6" fill="white" stroke="#ddd6fe" stroke-width="1"/>
+    <text x="44" y="94" font-size="7.5" fill="#7c3aed" font-family="sans-serif">A function that wraps another function</text>
+    <text x="44" y="110" font-size="7.5" fill="#94a3b8" font-family="sans-serif">A type of Python class</text>
+
+    <!-- Question 2 -->
+    <rect x="28" y="132" width="236" height="60" rx="8" fill="#f5f3ff"/>
+    <text x="38" y="146" font-size="8" fill="#7c3aed" font-family="sans-serif" font-weight="bold">Q2. Difference between list and tuple?</text>
+    <rect x="38" y="152" width="200" height="12" rx="6" fill="white" stroke="#ddd6fe" stroke-width="1"/>
+    <rect x="38" y="168" width="200" height="12" rx="6" fill="white" stroke="#ddd6fe" stroke-width="1"/>
+    <rect x="38" y="168" width="160" height="12" rx="6" fill="#ddd6fe"/>
+    <text x="44" y="162" font-size="7.5" fill="#94a3b8" font-family="sans-serif">Both are mutable</text>
+    <text x="44" y="178" font-size="7.5" fill="#7c3aed" font-family="sans-serif">Tuples are immutable, lists are mutable</text>
+
+    <!-- Progress bar -->
+    <text x="28" y="210" font-size="8" fill="#94a3b8" font-family="sans-serif">Progress: 6 of 10 questions</text>
+    <rect x="28" y="216" width="220" height="6" rx="3" fill="#ede9fe"/>
+    <rect x="28" y="216" width="132" height="6" rx="3" fill="url(#purple)"/>
+
+    <!-- Timer -->
+    <rect x="28" y="232" width="100" height="24" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
+    <text x="78" y="247" text-anchor="middle" font-size="10" fill="#d97706" font-family="Georgia,serif" font-weight="bold">⏱ 18:42</text>
+
+    <!-- Buttons -->
+    <rect x="28" y="264" width="100" height="14" rx="7" fill="url(#purple)"/>
+    <text x="78" y="274" text-anchor="middle" font-size="8" fill="white" font-family="sans-serif" font-weight="bold">Next Question</text>
+    <rect x="138" y="264" width="100" height="14" rx="7" fill="white" stroke="#ddd6fe" stroke-width="1"/>
+    <text x="188" y="274" text-anchor="middle" font-size="8" fill="#7c3aed" font-family="sans-serif">Save &amp; Exit</text>
+  </g>
+
+  <!-- Teacher / Results panel -->
+  <g filter="url(#s)">
+    <rect x="290" y="18" width="174" height="130" rx="12" fill="white" stroke="#ede9fe" stroke-width="1"/>
+    <rect x="290" y="18" width="174" height="28" rx="12" fill="url(#blue)"/>
+    <rect x="290" y="34" width="174" height="12" rx="0" fill="url(#blue)"/>
+    <text x="377" y="36" text-anchor="middle" font-size="9" fill="white" font-family="sans-serif" font-weight="bold">Teacher Dashboard</text>
+
+    <!-- Student list -->
+    <rect x="300" y="54" width="154" height="18" rx="4" fill="#eff6ff"/>
+    <circle cx="310" cy="63" r="5" fill="#1a56db" opacity="0.3"/>
+    <text x="316" y="66" font-size="8" fill="#334155" font-family="sans-serif">Priya Shah</text>
+    <text x="435" y="66" text-anchor="end" font-size="8" fill="#059669" font-family="sans-serif" font-weight="bold">92%</text>
+
+    <rect x="300" y="76" width="154" height="18" rx="4" fill="#f8fafc"/>
+    <circle cx="310" cy="85" r="5" fill="#1a56db" opacity="0.3"/>
+    <text x="316" y="88" font-size="8" fill="#334155" font-family="sans-serif">Rahul Mehta</text>
+    <text x="435" y="88" text-anchor="end" font-size="8" fill="#059669" font-family="sans-serif" font-weight="bold">78%</text>
+
+    <rect x="300" y="98" width="154" height="18" rx="4" fill="#eff6ff"/>
+    <circle cx="310" cy="107" r="5" fill="#1a56db" opacity="0.3"/>
+    <text x="316" y="110" font-size="8" fill="#334155" font-family="sans-serif">Ananya Patel</text>
+    <text x="435" y="110" text-anchor="end" font-size="8" fill="#dc2626" font-family="sans-serif" font-weight="bold">45%</text>
+
+    <rect x="300" y="122" width="154" height="16" rx="6" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+    <text x="377" y="133" text-anchor="middle" font-size="8" fill="#dc2626" font-family="sans-serif">⚠ Reschedule: Ananya</text>
+  </g>
+
+  <!-- MS Teams / WebEx integration panel -->
+  <g filter="url(#s)">
+    <rect x="290" y="158" width="174" height="128" rx="12" fill="white" stroke="#ede9fe" stroke-width="1"/>
+    <text x="300" y="176" font-size="9" fill="#334155" font-family="sans-serif" font-weight="bold">Scheduled Meetings</text>
+
+    <!-- Teams meeting -->
+    <rect x="300" y="182" width="154" height="38" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+    <rect x="300" y="182" width="6" height="38" rx="3" fill="#1a56db"/>
+    <text x="314" y="196" font-size="8" fill="#1a56db" font-family="sans-serif" font-weight="bold">MS Teams</text>
+    <text x="314" y="208" font-size="7.5" fill="#475569" font-family="sans-serif">Python Batch · Today 3PM</text>
+    <rect x="380" y="186" width="66" height="14" rx="7" fill="#1a56db"/>
+    <text x="413" y="196" text-anchor="middle" font-size="7.5" fill="white" font-family="sans-serif" font-weight="bold">Join ›</text>
+
+    <!-- WebEx meeting -->
+    <rect x="300" y="226" width="154" height="38" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+    <rect x="300" y="226" width="6" height="38" rx="3" fill="#059669"/>
+    <text x="314" y="240" font-size="8" fill="#059669" font-family="sans-serif" font-weight="bold">WebEx</text>
+    <text x="314" y="252" font-size="7.5" fill="#475569" font-family="sans-serif">Django Batch · Tomorrow 11AM</text>
+    <rect x="380" y="230" width="66" height="14" rx="7" fill="#059669"/>
+    <text x="413" y="240" text-anchor="middle" font-size="7.5" fill="white" font-family="sans-serif" font-weight="bold">Schedule</text>
+
+    <text x="300" y="278" font-size="7.5" fill="#94a3b8" font-family="sans-serif">Django · Graph API · WebEx API</text>
+  </g>
 </svg>

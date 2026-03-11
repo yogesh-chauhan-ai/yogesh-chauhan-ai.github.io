@@ -1,17 +1,121 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300">
-  <rect width="480" height="300" fill="#f0ebff"/>
-  <rect x="0" y="0" width="480" height="5" fill="#7c3aed"/>
-  <rect x="24" y="24" width="56" height="56" rx="14" fill="#7c3aed" opacity="0.12"/>
-  <text x="52" y="62" text-anchor="middle" font-size="32">📊</text>
-  <text x="96" y="52" font-size="18" font-weight="700" fill="#7c3aed" font-family="Georgia, serif">Texture</text>
-  <text x="96" y="70" font-size="11" fill="#64748b" font-family="Georgia, serif">yogesh-chauhan-ai.github.io</text>
-  <rect x="24" y="100" width="432" height="1" fill="#7c3aed" opacity="0.15"/>
-  <rect x="24" y="130" width="220" height="10" rx="5" fill="#7c3aed" opacity="0.15"/>
-  <rect x="24" y="150" width="340" height="8" rx="4" fill="#7c3aed" opacity="0.1"/>
-  <rect x="24" y="168" width="280" height="8" rx="4" fill="#7c3aed" opacity="0.1"/>
-  <rect x="24" y="186" width="180" height="8" rx="4" fill="#7c3aed" opacity="0.08"/>
-  <rect x="24" y="220" width="80" height="28" rx="6" fill="#7c3aed" opacity="0.15"/>
-  <rect x="116" y="220" width="80" height="28" rx="6" fill="#7c3aed" opacity="0.1"/>
-  <rect x="208" y="220" width="80" height="28" rx="6" fill="#7c3aed" opacity="0.1"/>
-  <rect x="24" y="265" width="432" height="2" rx="1" fill="#7c3aed" opacity="0.2"/>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8faff"/>
+      <stop offset="100%" style="stop-color:#eef2ff"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a56db"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d97706"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+    <filter id="s">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#1a56db" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="480" height="300" fill="url(#bg)"/>
+  <rect x="0" y="0" width="480" height="4" fill="url(#blue)"/>
+
+  <!-- Dashboard header -->
+  <rect x="16" y="14" width="448" height="28" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="30" y="32" font-size="11" fill="#1e293b" font-family="Georgia,serif" font-weight="bold">Texture-Pulse Analytics</text>
+  <rect x="370" y="19" width="60" height="18" rx="9" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="400" y="31" text-anchor="middle" font-size="8" fill="#1a56db" font-family="sans-serif" font-weight="bold">Live ●</text>
+
+  <!-- KPI Cards row -->
+  <g filter="url(#s)">
+    <rect x="16" y="52" width="96" height="50" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="64" y="72" text-anchor="middle" font-size="18" fill="#1a56db" font-family="Georgia,serif" font-weight="bold">2.4M</text>
+    <text x="64" y="87" text-anchor="middle" font-size="8" fill="#94a3b8" font-family="sans-serif">Records</text>
+    <text x="64" y="97" text-anchor="middle" font-size="8" fill="#059669" font-family="sans-serif">↑ 12%</text>
+  </g>
+  <g filter="url(#s)">
+    <rect x="120" y="52" width="96" height="50" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="168" y="72" text-anchor="middle" font-size="18" fill="#7c3aed" font-family="Georgia,serif" font-weight="bold">87%</text>
+    <text x="168" y="87" text-anchor="middle" font-size="8" fill="#94a3b8" font-family="sans-serif">Sentiment</text>
+    <text x="168" y="97" text-anchor="middle" font-size="8" fill="#059669" font-family="sans-serif">↑ 4%</text>
+  </g>
+  <g filter="url(#s)">
+    <rect x="224" y="52" width="96" height="50" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="272" y="72" text-anchor="middle" font-size="18" fill="#059669" font-family="Georgia,serif" font-weight="bold">1.8s</text>
+    <text x="272" y="87" text-anchor="middle" font-size="8" fill="#94a3b8" font-family="sans-serif">Load Time</text>
+    <text x="272" y="97" text-anchor="middle" font-size="8" fill="#059669" font-family="sans-serif">↓ 85%</text>
+  </g>
+  <g filter="url(#s)">
+    <rect x="328" y="52" width="136" height="50" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="396" y="72" text-anchor="middle" font-size="18" fill="#d97706" font-family="Georgia,serif" font-weight="bold">142</text>
+    <text x="396" y="87" text-anchor="middle" font-size="8" fill="#94a3b8" font-family="sans-serif">Topics Tracked</text>
+    <text x="396" y="97" text-anchor="middle" font-size="8" fill="#059669" font-family="sans-serif">Active</text>
+  </g>
+
+  <!-- Line chart -->
+  <g filter="url(#s)">
+    <rect x="16" y="114" width="220" height="120" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="26" y="129" font-size="9" fill="#334155" font-family="sans-serif" font-weight="bold">Sentiment Trend</text>
+
+    <!-- Chart lines -->
+    <polyline points="30,185 55,175 80,178 105,162 130,155 155,148 180,140 205,130 225,122" fill="none" stroke="url(#blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Area fill -->
+    <polygon points="30,185 55,175 80,178 105,162 130,155 155,148 180,140 205,130 225,122 225,200 30,200" fill="#1a56db" opacity="0.06"/>
+
+    <polyline points="30,195 55,190 80,186 105,180 130,178 155,170 180,165 205,158 225,150" fill="none" stroke="url(#purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5,3"/>
+
+    <!-- X axis labels -->
+    <text x="30" y="208" font-size="7" fill="#94a3b8" font-family="sans-serif">Jan</text>
+    <text x="80" y="208" font-size="7" fill="#94a3b8" font-family="sans-serif">Mar</text>
+    <text x="130" y="208" font-size="7" fill="#94a3b8" font-family="sans-serif">May</text>
+    <text x="180" y="208" font-size="7" fill="#94a3b8" font-family="sans-serif">Jul</text>
+    <text x="215" y="208" font-size="7" fill="#94a3b8" font-family="sans-serif">Sep</text>
+  </g>
+
+  <!-- Bar chart -->
+  <g filter="url(#s)">
+    <rect x="246" y="114" width="218" height="120" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="256" y="129" font-size="9" fill="#334155" font-family="sans-serif" font-weight="bold">Topic Distribution</text>
+
+    <!-- Bars -->
+    <rect x="262" y="152" width="22" height="62" rx="3" fill="url(#blue)"/>
+    <rect x="294" y="162" width="22" height="52" rx="3" fill="url(#purple)"/>
+    <rect x="326" y="145" width="22" height="69" rx="3" fill="url(#green)"/>
+    <rect x="358" y="168" width="22" height="46" rx="3" fill="url(#orange)"/>
+    <rect x="390" y="158" width="22" height="56" rx="3" fill="url(#blue)" opacity="0.6"/>
+    <rect x="422" y="172" width="22" height="42" rx="3" fill="url(#purple)" opacity="0.6"/>
+
+    <!-- X labels -->
+    <text x="273" y="222" text-anchor="middle" font-size="7" fill="#94a3b8" font-family="sans-serif">Tech</text>
+    <text x="305" y="222" text-anchor="middle" font-size="7" fill="#94a3b8" font-family="sans-serif">News</text>
+    <text x="337" y="222" text-anchor="middle" font-size="7" fill="#94a3b8" font-family="sans-serif">Sport</text>
+    <text x="369" y="222" text-anchor="middle" font-size="7" fill="#94a3b8" font-family="sans-serif">Fin</text>
+    <text x="401" y="222" text-anchor="middle" font-size="7" fill="#94a3b8" font-family="sans-serif">Health</text>
+    <text x="433" y="222" text-anchor="middle" font-size="7" fill="#94a3b8" font-family="sans-serif">Other</text>
+  </g>
+
+  <!-- Pie chart bottom left -->
+  <g filter="url(#s)">
+    <rect x="16" y="244" width="130" height="46" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+    <circle cx="44" cy="267" r="16" fill="none" stroke="#e2e8f0" stroke-width="10"/>
+    <circle cx="44" cy="267" r="16" fill="none" stroke="url(#blue)" stroke-width="10" stroke-dasharray="40 60" stroke-dashoffset="0"/>
+    <circle cx="44" cy="267" r="16" fill="none" stroke="url(#purple)" stroke-width="10" stroke-dasharray="25 75" stroke-dashoffset="-40"/>
+    <circle cx="44" cy="267" r="16" fill="none" stroke="url(#green)" stroke-width="10" stroke-dasharray="20 80" stroke-dashoffset="-65"/>
+    <text x="75" y="260" font-size="8" fill="#1a56db" font-family="sans-serif">● Positive 40%</text>
+    <text x="75" y="271" font-size="8" fill="#7c3aed" font-family="sans-serif">● Neutral 25%</text>
+    <text x="75" y="282" font-size="8" fill="#059669" font-family="sans-serif">● Negative 20%</text>
+  </g>
+
+  <!-- NLP badge bottom right -->
+  <rect x="320" y="252" width="144" height="36" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="392" y="267" text-anchor="middle" font-size="9" fill="#334155" font-family="Georgia,serif" font-weight="bold">NLP Pipeline Active</text>
+  <text x="392" y="281" text-anchor="middle" font-size="8" fill="#94a3b8" font-family="sans-serif">spaCy · Pandas · Plotly · Dash</text>
 </svg>
