@@ -335,7 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const sys = aiSystems.find(s => s.id === sysId);
     if (!sys) return;
     document.getElementById("archModalBadge").textContent = sys.badge;
-    document.getElementById("archModalTitle").textContent = sys.name + " — Architecture";
+    document.getElementById("archModalTitle").textContent = sys.name + ", Architecture";
     document.getElementById("archModalBody").innerHTML = buildArchContent(sys);
     openModal(archModal);
   }
@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const all = {
 
       "campaign-agent": {
-        overview: "An agentic LLM system that ingests audience data, performs semantic segmentation via vector search, and auto-generates multi-channel marketing campaign strategies with ROI projections — reducing strategy generation time by 3×.",
+        overview: "An agentic LLM system that ingests audience data, performs semantic segmentation via vector search, and auto-generates multi-channel marketing campaign strategies with ROI projections, reducing strategy generation time by 3×.",
         metrics: [
           { value: "3×", label: "Faster generation" },
           { value: "<5 min", label: "End-to-end latency" },
@@ -426,21 +426,21 @@ document.addEventListener("DOMContentLoaded", () => {
           { title: "Ranking", detail: "Retrieved campaigns ranked by similarity score and filtered by recency and historical performance metrics" },
           { title: "Synthesis", detail: "Strategy agent receives enriched context (segments + similar campaigns) and calls GPT-4 with structured output schema for multi-channel plan" },
           { title: "Projection", detail: "ROI projector applies historical performance coefficients to estimate expected metrics per channel (email, social, paid, SEO)" },
-          { title: "Delivery", detail: "Final structured campaign plan streamed back via FastAPI Server-Sent Events — client sees tokens appearing in real-time" },
+          { title: "Delivery", detail: "Final structured campaign plan streamed back via FastAPI Server-Sent Events, client sees tokens appearing in real-time" },
         ],
         challenges: [
           { title: "Agent Loop Prevention", detail: "Early prototypes entered tool-calling loops. Solved with max-step guards (configurable per agent), explicit exit conditions in LangGraph state schema, and loop-detection heuristics comparing sequential state snapshots for circular patterns." },
-          { title: "Context Window Management", detail: "Multi-hop agent calls accumulated large conversation histories, hitting context limits. Implemented sliding window summarisation — a dedicated summarisation agent compresses older context before each new hop, preserving key facts in a fraction of the tokens." },
+          { title: "Context Window Management", detail: "Multi-hop agent calls accumulated large conversation histories, hitting context limits. Implemented sliding window summarisation, a dedicated summarisation agent compresses older context before each new hop, preserving key facts in a fraction of the tokens." },
           { title: "Structured Output Consistency", detail: "GPT-4 occasionally deviated from the expected JSON schema for campaign plans. Switched to OpenAI function-calling mode with strict schema enforcement and added a Pydantic validation layer with retry logic (max 3 attempts before error escalation)." },
           { title: "Cold Start Latency", detail: "First-call latency averaged 18 seconds due to sequential agent execution. Redis semantic cache for repeated or similar audience segments cut P95 latency to under 5 seconds for warm queries, covering ~60% of real-world traffic." },
         ],
         scaling: [
-          "Kubernetes HPA on FastAPI pods scales horizontally based on request queue depth — handles burst demand during campaign planning sprints without manual intervention.",
-          "Celery worker pool runs audience segmentation and historical retrieval concurrently, not sequentially — shaving ~40% off wall-clock time.",
+          "Kubernetes HPA on FastAPI pods scales horizontally based on request queue depth, handles burst demand during campaign planning sprints without manual intervention.",
+          "Celery worker pool runs audience segmentation and historical retrieval concurrently, not sequentially, shaving ~40% off wall-clock time.",
           "Model-agnostic config flag enables cost-optimised routing: GPT-4o for strategy synthesis, GPT-4o-mini for simpler sub-tasks like ROI projection.",
-          "Pinecone serverless index scales automatically — zero infrastructure management for the vector store.",
+          "Pinecone serverless index scales automatically, zero infrastructure management for the vector store.",
         ],
-        outcome: "3× faster campaign strategy generation. Average turnaround reduced from 4–6 hours to under 5 minutes. Deployed across 4 product teams with zero critical failures in the first 90 days. Strategist satisfaction improved significantly — AI acts as a force multiplier rather than a replacement.",
+        outcome: "3× faster campaign strategy generation. Average turnaround reduced from 4–6 hours to under 5 minutes. Deployed across 4 product teams with zero critical failures in the first 90 days. Strategist satisfaction improved significantly, AI acts as a force multiplier rather than a replacement.",
       },
 
       "competitor-intel": {
@@ -464,21 +464,21 @@ document.addEventListener("DOMContentLoaded", () => {
           { title: "Scheduling", detail: "Celery Beat triggers crawl jobs at configured intervals: hourly for pricing pages, daily for blog/news, weekly for full site audits" },
           { title: "Crawling", detail: "Playwright headless browser workers fetch competitor pages, handling JavaScript-rendered content with proper wait conditions for dynamic elements" },
           { title: "Cleaning", detail: "Raw HTML cleaned with BeautifulSoup, irrelevant content (nav, footer, ads) stripped, remaining text segmented into logical sections (pricing tables, feature lists, announcements)" },
-          { title: "Extraction", detail: "GPT-4 parser with structured output schema extracts: pricing tiers, feature changes, team announcements, product updates — all as validated JSON" },
+          { title: "Extraction", detail: "GPT-4 parser with structured output schema extracts: pricing tiers, feature changes, team announcements, product updates, all as validated JSON" },
           { title: "Indexing", detail: "Extracted intelligence embedded and stored in Qdrant with rich metadata: source URL, competitor ID, content category, extraction timestamp, confidence score" },
-          { title: "Change Detection", detail: "New embeddings compared against stored ones using cosine similarity — updates with delta below 0.78 threshold flagged as significant changes" },
+          { title: "Change Detection", detail: "New embeddings compared against stored ones using cosine similarity, updates with delta below 0.78 threshold flagged as significant changes" },
           { title: "Digest Delivery", detail: "Daily digest synthesises the day's significant changes, ranked by importance score, then posted to Slack with source links and inline confidence indicators" },
         ],
         challenges: [
           { title: "Anti-Bot Detection", detail: "Several competitor sites implemented sophisticated bot detection. Solved with rotating residential proxies, randomised request timing (1–8s delay), user-agent rotation pool, and Playwright stealth plugins to bypass fingerprinting for most sites." },
-          { title: "LLM Extraction Reliability", detail: "GPT-4 occasionally hallucinated pricing figures. Added a validation layer that cross-references extracted numbers against visible page text using regex patterns before accepting LLM output — hallucinated values don't appear in the source HTML." },
+          { title: "LLM Extraction Reliability", detail: "GPT-4 occasionally hallucinated pricing figures. Added a validation layer that cross-references extracted numbers against visible page text using regex patterns before accepting LLM output, hallucinated values don't appear in the source HTML." },
           { title: "Cross-Run Deduplication", detail: "The same announcement appeared in multiple consecutive crawls. Implemented near-duplicate detection using MinHash + LSH before embedding, rejecting content with >85% Jaccard similarity to entries from the past 7 days." },
-          { title: "Change Sensitivity Tuning", detail: "Initial threshold generated too many false positives — minor CSS/layout changes flagged as content updates. A/B tested similarity thresholds over 2 weeks and settled on 0.78 cosine similarity delta as the optimal balance between coverage and noise." },
+          { title: "Change Sensitivity Tuning", detail: "Initial threshold generated too many false positives, minor CSS/layout changes flagged as content updates. A/B tested similarity thresholds over 2 weeks and settled on 0.78 cosine similarity delta as the optimal balance between coverage and noise." },
         ],
         scaling: [
-          "Celery worker pool scales with the number of competitors — adding a new competitor requires only a config entry, zero code changes.",
+          "Celery worker pool scales with the number of competitors, adding a new competitor requires only a config entry, zero code changes.",
           "Qdrant collections partitioned by competitor ID and content category for efficient filtered retrieval during change detection.",
-          "Tiered model strategy: cheaper models for initial content filtering, GPT-4 only for final structured extraction of high-confidence content — keeps cost linear with scale.",
+          "Tiered model strategy: cheaper models for initial content filtering, GPT-4 only for final structured extraction of high-confidence content, keeps cost linear with scale.",
           "Redis pub/sub enables real-time alerting for high-priority events (e.g. pricing changes) outside the daily digest cycle, with configurable urgency thresholds.",
         ],
         outcome: "Fully automated daily competitive briefings covering 12 competitors across 3 industries. Zero missed significant updates in 60 days post-deployment. Business team competitive research time reduced from 4 hours/week to 15 minutes for review. System monitors 200+ pages daily with average end-to-end latency under 8 minutes per crawl cycle.",
@@ -492,7 +492,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { value: "50K+", label: "Docs indexed" },
           { value: "3", label: "Enterprise clients" },
         ],
-        problemDetail: "An enterprise client had 50,000+ internal documents (PDFs, DOCX, Confluence pages) that support teams couldn't query efficiently — resulting in 10-minute average resolution times, frequent escalations, and repeated answers to identical questions. The client needed a system that could answer questions accurately with source citations, deployed within their security perimeter.",
+        problemDetail: "An enterprise client had 50,000+ internal documents (PDFs, DOCX, Confluence pages) that support teams couldn't query efficiently, resulting in 10-minute average resolution times, frequent escalations, and repeated answers to identical questions. The client needed a system that could answer questions accurately with source citations, deployed within their security perimeter.",
         diagramRows: [
           { label: "Ingestion Pipeline" },
           { nodes: [{ text: "Documents", sub: "PDF/DOCX/TXT" }, "→", { text: "Chunker", sub: "Recursive split" }, "→", { text: "Embedder", sub: "text-embed-3-large", ai: true }, "→", { text: "Pinecone", sub: "Dense index", accent: true }, "→", { text: "BM25 Index", sub: "Sparse index", accent: true }] },
@@ -503,26 +503,26 @@ document.addEventListener("DOMContentLoaded", () => {
         ],
         workflow: [
           { title: "Ingestion", detail: "Documents uploaded via admin API, queued to Celery workers for async processing at 10,000 chunks/hour throughput" },
-          { title: "Chunking", detail: "Recursive character splitter with sentence boundary detection — prevents semantic splits mid-thought, produces coherent 300–400 token chunks with 10% overlap" },
-          { title: "Dual Indexing", detail: "Each chunk embedded via OpenAI text-embedding-3-large (dense) AND indexed in BM25 (sparse) — both stored with identical metadata for cross-referencing" },
-          { title: "Hybrid Retrieval", detail: "Top-20 dense candidates + top-20 BM25 candidates retrieved in parallel, then merged via Reciprocal Rank Fusion (RRF) — more robust to score scale differences than weighted sum" },
+          { title: "Chunking", detail: "Recursive character splitter with sentence boundary detection, prevents semantic splits mid-thought, produces coherent 300–400 token chunks with 10% overlap" },
+          { title: "Dual Indexing", detail: "Each chunk embedded via OpenAI text-embedding-3-large (dense) AND indexed in BM25 (sparse), both stored with identical metadata for cross-referencing" },
+          { title: "Hybrid Retrieval", detail: "Top-20 dense candidates + top-20 BM25 candidates retrieved in parallel, then merged via Reciprocal Rank Fusion (RRF), more robust to score scale differences than weighted sum" },
           { title: "Re-ranking", detail: "Cross-encoder (ms-marco-MiniLM-L-6-v2) scores all 40 merged candidates and selects final top-5 most relevant chunks for answer synthesis context" },
           { title: "Multi-hop Check", detail: "Query classifier detects compound questions (e.g. 'What is X and how does it compare to Y?') and decomposes them into sequential sub-queries before retrieval" },
           { title: "Answer Synthesis", detail: "GPT-4 generates answer with inline source citations [Doc: filename, p.N], streamed token-by-token via Server-Sent Events to the client" },
         ],
         challenges: [
-          { title: "Chunking Strategy", detail: "The hardest problem. Naive 512-token fixed splits broke semantic coherence across paragraphs — retrieval quality dropped 22%. Solved with recursive character splitting that respects paragraph and sentence boundaries, producing semantically coherent chunks with 10% overlap between adjacent chunks." },
+          { title: "Chunking Strategy", detail: "The hardest problem. Naive 512-token fixed splits broke semantic coherence across paragraphs, retrieval quality dropped 22%. Solved with recursive character splitting that respects paragraph and sentence boundaries, producing semantically coherent chunks with 10% overlap between adjacent chunks." },
           { title: "Hybrid Search Fusion", detail: "Simple weighted sum of dense + sparse scores produced worse results than either alone due to incompatible score scales. Switched to Reciprocal Rank Fusion (RRF), which is agnostic to score magnitude and improved MRR@10 by 18% over weighted averaging." },
-          { title: "Multi-Hop Query Decomposition", detail: "Compound questions like 'What is the refund policy and how does it differ from the cancellation policy?' required two retrieval passes with different queries. Built a lightweight query classifier that detects compound intent and decomposes before retrieval — improved accuracy on compound questions from 61% to 84%." },
-          { title: "Latency at Scale", detail: "With 50K chunks, retrieval was fast but GPT-4 synthesis averaged 4.2s. Redis semantic cache stores query embeddings — new queries with cosine similarity >0.92 to cached queries are served directly from cache. This covers ~40% of production traffic, cutting overall P95 from 4.2s to 1.2s." },
+          { title: "Multi-Hop Query Decomposition", detail: "Compound questions like 'What is the refund policy and how does it differ from the cancellation policy?' required two retrieval passes with different queries. Built a lightweight query classifier that detects compound intent and decomposes before retrieval, improved accuracy on compound questions from 61% to 84%." },
+          { title: "Latency at Scale", detail: "With 50K chunks, retrieval was fast but GPT-4 synthesis averaged 4.2s. Redis semantic cache stores query embeddings , new queries with cosine similarity >0.92 to cached queries are served directly from cache. This covers ~40% of production traffic, cutting overall P95 from 4.2s to 1.2s." },
         ],
         scaling: [
-          "Pinecone serverless index scales automatically — no infrastructure management, pay-per-query model handles arbitrary document growth.",
-          "Async FastAPI with streaming SSE — clients receive answer tokens in real-time, not waiting for full synthesis, which dramatically improves perceived responsiveness.",
-          "Redis semantic cache with TTL-based expiry — popular query clusters cached automatically, reducing LLM API costs by ~40% in steady state.",
-          "Multi-tenant isolation via Pinecone namespace partitioning — different clients' documents never cross-contaminate retrieval results.",
+          "Pinecone serverless index scales automatically , no infrastructure management, pay-per-query model handles arbitrary document growth.",
+          "Async FastAPI with streaming SSE , clients receive answer tokens in real-time, not waiting for full synthesis, which dramatically improves perceived responsiveness.",
+          "Redis semantic cache with TTL-based expiry , popular query clusters cached automatically, reducing LLM API costs by ~40% in steady state.",
+          "Multi-tenant isolation via Pinecone namespace partitioning , different clients' documents never cross-contaminate retrieval results.",
         ],
-        outcome: "87% accuracy on domain-specific Q&A benchmark (vs 71% baseline with naive single-stage RAG). 70% reduction in P95 query latency via Redis caching. Deployed to 3 enterprise clients. Support resolution time reduced by 45% — agents resolved queries directly via the knowledge assistant rather than escalating to subject matter experts.",
+        outcome: "87% accuracy on domain-specific Q&A benchmark (vs 71% baseline with naive single-stage RAG). 70% reduction in P95 query latency via Redis caching. Deployed to 3 enterprise clients. Support resolution time reduced by 45% , agents resolved queries directly via the knowledge assistant rather than escalating to subject matter experts.",
       },
 
       "autoagent": {
@@ -544,24 +544,24 @@ document.addEventListener("DOMContentLoaded", () => {
         ],
         workflow: [
           { title: "Task Intake", detail: "Task received via API or user message, parsed by the supervisor agent into a structured plan with ordered sub-tasks and required tools" },
-          { title: "Graph Execution", detail: "LangGraph stateful DAG begins execution — each node represents an agent state, edges represent conditional transitions based on output type" },
+          { title: "Graph Execution", detail: "LangGraph stateful DAG begins execution , each node represents an agent state, edges represent conditional transitions based on output type" },
           { title: "Tool Invocation", detail: "Sub-agents invoke registered tools: web search (Tavily), Python REPL (sandboxed execution), external APIs, and knowledge base queries via the RAG sub-agent" },
-          { title: "Memory Access", detail: "Each agent reads from and writes to PostgreSQL + pgvector long-term memory — summaries of past sessions retrieved by semantic similarity for context injection" },
-          { title: "Parallel Execution", detail: "Independent sub-tasks routed to Celery workers for parallel execution — research and data analysis can run concurrently while writer waits for both" },
+          { title: "Memory Access", detail: "Each agent reads from and writes to PostgreSQL + pgvector long-term memory , summaries of past sessions retrieved by semantic similarity for context injection" },
+          { title: "Parallel Execution", detail: "Independent sub-tasks routed to Celery workers for parallel execution , research and data analysis can run concurrently while writer waits for both" },
           { title: "HITL Gate", detail: "Sensitive actions (publishing, sending emails, API calls with side effects) pause at a LangGraph interrupt node for human review before proceeding" },
           { title: "Output Assembly", detail: "Supervisor assembles sub-agent outputs, performs quality checks, and streams final result to the client with a full execution trace" },
         ],
         challenges: [
-          { title: "Agent Loop Detection", detail: "Agents occasionally entered tool-calling loops, calling the same tool repeatedly with identical parameters. Solved with state-aware loop detection that compares the last 3 tool calls — if identical, the agent is interrupted and rerouted via the supervisor." },
-          { title: "Cross-Session Memory", detail: "Naive full-history injection quickly exhausted context windows. Implemented a two-tier memory system: short-term (current session sliding window) + long-term (pgvector semantic retrieval of relevant past sessions) — injecting only the most relevant historical context." },
+          { title: "Agent Loop Detection", detail: "Agents occasionally entered tool-calling loops, calling the same tool repeatedly with identical parameters. Solved with state-aware loop detection that compares the last 3 tool calls , if identical, the agent is interrupted and rerouted via the supervisor." },
+          { title: "Cross-Session Memory", detail: "Naive full-history injection quickly exhausted context windows. Implemented a two-tier memory system: short-term (current session sliding window) + long-term (pgvector semantic retrieval of relevant past sessions) , injecting only the most relevant historical context." },
           { title: "HITL Timing", detail: "Determining when to pause for human approval without interrupting flow too frequently required careful gate placement. Settled on a risk-scoring approach: actions scored above a configurable threshold trigger HITL, others auto-proceed." },
           { title: "Model-Agnostic Routing", detail: "Supporting OpenAI, Anthropic Claude, and local Ollama models required abstracting away provider-specific tool-calling formats. Built a unified tool-call adapter layer that normalises responses from all three providers into a consistent internal schema." },
         ],
         scaling: [
-          "Celery task queue enables parallel sub-agent execution — multi-step tasks that previously ran sequentially now complete in 40% less wall-clock time.",
-          "LangGraph checkpointing persists agent state to PostgreSQL — agents can be paused, resumed, or restarted without losing progress, even across server restarts.",
-          "Model router selects the cheapest model capable of handling each sub-task — GPT-4o for complex synthesis, GPT-4o-mini for simple tool calls, Ollama for privacy-sensitive tasks.",
-          "Horizontal FastAPI scaling with shared PostgreSQL state store — any pod can resume any agent's execution without affinity requirements.",
+          "Celery task queue enables parallel sub-agent execution , multi-step tasks that previously ran sequentially now complete in 40% less wall-clock time.",
+          "LangGraph checkpointing persists agent state to PostgreSQL , agents can be paused, resumed, or restarted without losing progress, even across server restarts.",
+          "Model router selects the cheapest model capable of handling each sub-task , GPT-4o for complex synthesis, GPT-4o-mini for simple tool calls, Ollama for privacy-sensitive tasks.",
+          "Horizontal FastAPI scaling with shared PostgreSQL state store , any pod can resume any agent's execution without affinity requirements.",
         ],
         outcome: "3× faster task completion for marketing automation workflows. Deployed across 4 product teams processing 200+ agentic tasks per day. Zero critical failures in the first 90 days. Model-agnostic design enabled a 35% LLM cost reduction by routing simpler sub-tasks to cheaper models.",
       },
@@ -584,30 +584,30 @@ document.addEventListener("DOMContentLoaded", () => {
           { nodes: [{ text: "K8s HPA", sub: "Auto-scaling pods", accent: true }, "↔", { text: "Redis Cache", sub: "Hot queries", accent: true }, "↔", { text: "FastAPI", sub: "Async serving", ai: true }] },
         ],
         workflow: [
-          { title: "Indexing", detail: "Catalogue items processed in batches — text fields embedded via SentenceTransformers (ONNX runtime), image URLs processed via CLIP model, both stored in Qdrant with full metadata payload" },
+          { title: "Indexing", detail: "Catalogue items processed in batches , text fields embedded via SentenceTransformers (ONNX runtime), image URLs processed via CLIP model, both stored in Qdrant with full metadata payload" },
           { title: "ES Mirroring", detail: "All items also indexed in ElasticSearch with BM25 for keyword matching and as the primary metadata filter engine (handles complex boolean predicates more efficiently than Qdrant)" },
-          { title: "Query Embedding", detail: "Incoming search query embedded via same ONNX model as indexing — ONNX runtime achieves 3× throughput vs PyTorch for inference, critical at P99 latency requirements" },
+          { title: "Query Embedding", detail: "Incoming search query embedded via same ONNX model as indexing , ONNX runtime achieves 3× throughput vs PyTorch for inference, critical at P99 latency requirements" },
           { title: "Hybrid Retrieval", detail: "Top-50 from Qdrant dense search + top-50 from ElasticSearch BM25, merged via RRF. ES also handles metadata filtering predicates (price range, category, availability) before merge" },
-          { title: "Metadata Filtering", detail: "Custom filter DSL exposes Qdrant's payload filter operators via clean REST API — clients pass JSON filter objects rather than learning Qdrant's native query syntax" },
+          { title: "Metadata Filtering", detail: "Custom filter DSL exposes Qdrant's payload filter operators via clean REST API , clients pass JSON filter objects rather than learning Qdrant's native query syntax" },
           { title: "Result Serving", detail: "Final ranked results with scores and metadata returned as paginated JSON response, with optional explanation field showing why each result matched" },
         ],
         challenges: [
-          { title: "ONNX Runtime Integration", detail: "Converting SentenceTransformers to ONNX required careful handling of dynamic input shapes and attention mask management. The payoff: 3× throughput improvement and 60% memory reduction vs the PyTorch model — essential for meeting P99 latency SLAs." },
-          { title: "Hybrid Score Fusion", detail: "Dense and sparse scores have incompatible scales — direct combination degraded results vs either alone. RRF solved the scale problem, but required tuning the k parameter (settled on k=60) via offline A/B testing against a human-labelled relevance dataset." },
+          { title: "ONNX Runtime Integration", detail: "Converting SentenceTransformers to ONNX required careful handling of dynamic input shapes and attention mask management. The payoff: 3× throughput improvement and 60% memory reduction vs the PyTorch model , essential for meeting P99 latency SLAs." },
+          { title: "Hybrid Score Fusion", detail: "Dense and sparse scores have incompatible scales , direct combination degraded results vs either alone. RRF solved the scale problem, but required tuning the k parameter (settled on k=60) via offline A/B testing against a human-labelled relevance dataset." },
           { title: "Zero-Downtime Reindexing", detail: "Catalogue updates of 50K+ items needed to be applied without search downtime. Implemented blue-green Qdrant collection swap: new collection built in background, traffic atomically switched on completion, old collection deleted." },
           { title: "Cold Query Latency", detail: "First requests after pod scale-up were slow due to model loading. Implemented model preloading on pod startup with readiness probe that only passes after the first 10 warm-up inferences confirm sub-100ms performance." },
         ],
         scaling: [
-          "Kubernetes HPA scales FastAPI pods based on CPU utilisation and request queue depth — handles 10× traffic spikes during flash sales without manual intervention.",
-          "Qdrant sharding across 3 nodes distributes the 2M+ vector index — each node handles ~700K vectors, keeping per-node memory under 8GB.",
-          "Redis caches hot query embeddings — popular search terms pre-embedded and cached, eliminating ONNX inference latency for the top 20% of queries.",
-          "PodDisruptionBudget ensures minimum 2 replicas available during rolling updates — zero query downtime for catalogue refreshes.",
+          "Kubernetes HPA scales FastAPI pods based on CPU utilisation and request queue depth , handles 10× traffic spikes during flash sales without manual intervention.",
+          "Qdrant sharding across 3 nodes distributes the 2M+ vector index , each node handles ~700K vectors, keeping per-node memory under 8GB.",
+          "Redis caches hot query embeddings , popular search terms pre-embedded and cached, eliminating ONNX inference latency for the top 20% of queries.",
+          "PodDisruptionBudget ensures minimum 2 replicas available during rolling updates , zero query downtime for catalogue refreshes.",
         ],
         outcome: "Sub-100ms P99 latency achieved and maintained at 2M+ item scale. 3× embedding throughput via ONNX runtime. 99.9% uptime over 6 months via Kubernetes HPA and PDB. Search relevance MRR@10 improved 34% vs the previous keyword-only system.",
       },
 
       "db-insight": {
-        overview: "An internal AI platform that connects to PostgreSQL/MySQL data sources, auto-generates natural language summaries, anomaly alerts, and interactive Plotly visualisations — driving a 65% improvement in data efficiency across the organisation.",
+        overview: "An internal AI platform that connects to PostgreSQL/MySQL data sources, auto-generates natural language summaries, anomaly alerts, and interactive Plotly visualisations , driving a 65% improvement in data efficiency across the organisation.",
         metrics: [
           { value: "65%", label: "Data efficiency gain" },
           { value: "12s→1.8s", label: "Dashboard load time" },
@@ -624,7 +624,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { nodes: [{ text: "Plotly Charts", sub: "10+ types", accent: true }, "↔", { text: "Dash App", sub: "Interactive callbacks", accent: true }, "↔", { text: "FastAPI", sub: "Data endpoints", ai: true }] },
         ],
         workflow: [
-          { title: "Connection", detail: "Platform connects to configured data sources via SQLAlchemy connection pool — auto-discovers schema, table relationships, and column semantics" },
+          { title: "Connection", detail: "Platform connects to configured data sources via SQLAlchemy connection pool , auto-discovers schema, table relationships, and column semantics" },
           { title: "Schema Intelligence", detail: "GPT-4 analyses table and column names to infer semantic meaning, grouping related tables into logical domains (e.g. 'orders', 'customers', 'inventory')" },
           { title: "ETL Pipeline", detail: "Pandas-based ETL normalises data types, handles nulls, detects outliers, and produces clean DataFrames ready for analysis and visualisation" },
           { title: "NL Summarisation", detail: "GPT-4 generates plain-English summaries of key dataset metrics (e.g. 'Orders are up 12% this week, with electronics driving 45% of volume') on configurable schedules" },
@@ -632,18 +632,18 @@ document.addEventListener("DOMContentLoaded", () => {
           { title: "Visualisation", detail: "Dash callbacks serve interactive Plotly charts (Bar, Pie, 3D Scatter, Violin, Line, Heatmap, Sankey) with drill-down capability and real-time data refresh" },
         ],
         challenges: [
-          { title: "Query Performance at Scale", detail: "Naive full-table queries on million-row tables caused 12-second dashboard loads. Introduced materialized views for pre-aggregated metrics, query caching with intelligent invalidation, and database indexing strategy — reducing median load time to 1.8 seconds." },
+          { title: "Query Performance at Scale", detail: "Naive full-table queries on million-row tables caused 12-second dashboard loads. Introduced materialized views for pre-aggregated metrics, query caching with intelligent invalidation, and database indexing strategy , reducing median load time to 1.8 seconds." },
           { title: "Schema Semantic Understanding", detail: "Column names like 'amt', 'qty', 'ts' are meaningless without context. GPT-4 analyses column names alongside sample data to infer semantics, then stores inferred types in a metadata registry that improves over time." },
-          { title: "Anomaly Alert Tuning", detail: "Initial anomaly detection generated excessive false positives. Implemented a feedback loop where analysts can mark alerts as false positives — the system adjusts per-metric thresholds automatically based on historical false positive rates." },
-          { title: "Multi-Source Join Complexity", detail: "Joining tables across different database engines required a virtual query layer. Built an abstraction that translates logical join intents into separate queries per source, then performs the join in Pandas — transparently to the user." },
+          { title: "Anomaly Alert Tuning", detail: "Initial anomaly detection generated excessive false positives. Implemented a feedback loop where analysts can mark alerts as false positives , the system adjusts per-metric thresholds automatically based on historical false positive rates." },
+          { title: "Multi-Source Join Complexity", detail: "Joining tables across different database engines required a virtual query layer. Built an abstraction that translates logical join intents into separate queries per source, then performs the join in Pandas , transparently to the user." },
         ],
         scaling: [
           "Connection pooling via SQLAlchemy manages concurrent queries to multiple databases without overwhelming source systems.",
-          "Celery async tasks for ETL and NL summarisation jobs — dashboards render immediately with cached data while fresh summaries generate in the background.",
-          "Redis caching layer stores computed aggregations with TTL aligned to data update frequency — daily aggregates cached for 24 hours, hourly for 1 hour.",
-          "Dash server-side callbacks offload heavy computation from browser to server — clients receive only the minimal chart data needed for the current view.",
+          "Celery async tasks for ETL and NL summarisation jobs , dashboards render immediately with cached data while fresh summaries generate in the background.",
+          "Redis caching layer stores computed aggregations with TTL aligned to data update frequency , daily aggregates cached for 24 hours, hourly for 1 hour.",
+          "Dash server-side callbacks offload heavy computation from browser to server , clients receive only the minimal chart data needed for the current view.",
         ],
-        outcome: "65% improvement in data efficiency — analysts spend time on insights rather than query writing. Dashboard load time reduced from 12 seconds to 1.8 seconds. Anomaly detection catches issues 4× faster than manual monitoring. Platform adopted by 5 internal teams across 3 departments.",
+        outcome: "65% improvement in data efficiency , analysts spend time on insights rather than query writing. Dashboard load time reduced from 12 seconds to 1.8 seconds. Anomaly detection catches issues 4× faster than manual monitoring. Platform adopted by 5 internal teams across 3 departments.",
       },
     };
 
