@@ -15,21 +15,21 @@ export const profile = {
   summary: `AI Development Lead focused on transforming cutting-edge Generative AI into scalable, production-grade platforms that drive measurable business impact.<br><br>
 I lead high-performing engineering teams building intelligent AI systems using <strong>Python</strong> as my core stack, bridging the gap between experimental AI innovation and reliable, enterprise-ready deployments.<br><br>
 My expertise spans <strong>GenAI architecture, LLM integrations, RAG pipelines, and agentic AI systems</strong>, enabling autonomous workflows and intelligent decision-making across products and services.<br><br>
-Over the years, I have delivered <strong>13+ backend platforms</strong> and led <strong>5 AI integration initiatives</strong>, helping organizations streamline operations and unlock data value — most notably driving a <strong>65% increase in data efficiency</strong> through the DB Insight platform.<br><br>
+Over the years, I have delivered <strong>13+ backend platforms</strong> and led <strong>5 AI integration initiatives</strong>, helping organizations streamline operations and unlock data value, most notably driving a <strong>65% increase in data efficiency</strong> through the DB Insight platform.<br><br>
 <strong>Key areas of expertise:</strong><br>
-- <strong>AI Platform Architecture</strong> — LLM systems, RAG pipelines, agentic workflows<br>
-- <strong>Backend &amp; API Engineering</strong> — FastAPI, Flask, Django, Dash<br>
-- <strong>AI Infrastructure &amp; Deployment</strong> — Docker, Redis, scalable service architecture<br>
-- <strong>Data Systems</strong> — PostgreSQL, SQL, structured data pipelines<br>
-- <strong>AI Product Engineering</strong> — API integrations, payment systems, intelligent services<br><br>
+- <strong>AI Platform Architecture</strong> : LLM systems, RAG pipelines, agentic workflows<br>
+- <strong>Backend &amp; API Engineering</strong> : FastAPI, Flask, Django, Dash<br>
+- <strong>AI Infrastructure &amp; Deployment</strong> : Docker, Redis, scalable service architecture<br>
+- <strong>Data Systems</strong> : PostgreSQL, SQL, structured data pipelines<br>
+- <strong>AI Product Engineering</strong> : API integrations, payment systems, intelligent services<br><br>
 Currently open to <strong>Senior AI / GenAI leadership roles in Mumbai or remote</strong>.`,
 };
 
 export const services = [
-  { icon: "code-slash-outline", title: "Backend Development", description: "Scalable Python backends with Django, FastAPI & Flask — REST APIs, microservices, async workflows, and payment integrations." },
+  { icon: "code-slash-outline", title: "Backend Development", description: "Scalable Python backends with Django, FastAPI & Flask, REST APIs, microservices, async workflows, and payment integrations." },
   { icon: "hardware-chip-outline", title: "AI & LLM Engineering", description: "Production-grade AI systems using RAG pipelines, vector databases, prompt engineering, and fine-tuned LLM integrations." },
   { icon: "cloud-outline", title: "Cloud & DevOps", description: "Containerised deployments on AWS, Docker/Kubernetes orchestration, CI/CD pipelines with Terraform & GitHub Actions." },
-  { icon: "bar-chart-outline", title: "Data Engineering", description: "Data pipelines with PySpark, Pandas, PostgreSQL, Redis & ElasticSearch — from ingestion to visualization with Plotly & Dash." },
+  { icon: "bar-chart-outline", title: "Data Engineering", description: "Data pipelines with PySpark, Pandas, PostgreSQL, Redis & ElasticSearch, from ingestion to visualization with Plotly & Dash." },
 ];
 
 export const techStack = [
@@ -133,7 +133,7 @@ export const aiSystems = [
   },
   {
     id: "autoagent",
-    name: "AutoAgent — LLM Orchestration",
+    name: "AutoAgent [LLM Orchestration]",
     problem: "Teams needed a flexible, model-agnostic multi-agent framework for complex task automation.",
     description: "Production multi-agent orchestration built on LangGraph. Supports tool-calling, persistent memory, parallel sub-agents, and human-in-the-loop approval gates.",
     techStack: ["Python", "LangGraph", "OpenAI", "Anthropic Claude", "Celery", "FastAPI"],
@@ -155,9 +155,9 @@ export const aiSystems = [
   },
   {
     id: "db-insight",
-    name: "DB Insight — Data Intelligence",
+    name: "DB Insight [Data Intelligence]",
     problem: "Organisations struggled to extract actionable intelligence from fragmented database systems.",
-    description: "Internal AI platform connecting to PostgreSQL/MySQL sources, auto-generating NL summaries, anomaly alerts, and visualisations — driving 65% data efficiency improvement.",
+    description: "Internal AI platform connecting to PostgreSQL/MySQL sources, auto-generating NL summaries, anomaly alerts, and visualisations, driving 65% data efficiency improvement.",
     techStack: ["Python", "Django", "FastAPI", "PySpark", "Pandas", "Plotly / Dash"],
     demoUrl: "#demos",
     githubUrl: "https://github.com/yogesh-chauhan-ai",
@@ -169,7 +169,7 @@ export const aiSystems = [
 export const liveDemos = [
   {
     name: "Campaign Strategy Generator",
-    description: "Input your audience segment and product details — get a full AI-generated multi-channel campaign strategy in seconds.",
+    description: "Input your audience segment and product details, get a full AI-generated multi-channel campaign strategy in seconds.",
     platform: "Streamlit",
     demoUrl: "#",
     comingSoon: true,
@@ -200,12 +200,12 @@ export const caseStudies = [
   {
     id: "rag-case",
     title: "Building a 50K-Doc RAG System with 87% Accuracy",
-    problem: "An enterprise client had 50,000+ internal documents that support teams couldn't query efficiently — slow resolution times and repeated escalations.",
+    problem: "An enterprise client had 50,000+ internal documents that support teams couldn't query efficiently, slow resolution times and repeated escalations.",
     architecture: "Hybrid retrieval combining dense vector embeddings (OpenAI text-embedding-3-large) with sparse BM25, followed by a cross-encoder re-ranking stage. Multi-hop reasoning chains decompose complex queries before synthesis.",
     decisions: [
-      "Chose Pinecone over self-hosted Qdrant for managed scaling — saved 2 weeks of infra setup.",
+      "Chose Pinecone over self-hosted Qdrant for managed scaling, saved 2 weeks of infra setup.",
       "Implemented cross-encoder re-ranking after noticing dense-only retrieval missed exact-match queries.",
-      "Redis caching for repeated query patterns — cut latency by 70% in production.",
+      "Redis caching for repeated query patterns, cut latency by 70% in production.",
       "Streaming FastAPI responses improved perceived UX vs waiting for full answers.",
     ],
     challenges: "Chunking strategy was the hardest problem. Naive 512-token chunks broke semantic coherence. Solved with recursive character splitting + sentence boundary detection.",
@@ -220,7 +220,7 @@ export const caseStudies = [
     architecture: "LangGraph stateful DAG with a supervisor agent routing to specialised sub-agents (research, writing, analysis). Persistent memory via PostgreSQL + pgvector. Celery for parallel execution.",
     decisions: [
       "LangGraph over vanilla LangChain for explicit state management and conditional branching.",
-      "Human-in-the-loop gates as LangGraph interrupt nodes — cleaner than custom middleware.",
+      "Human-in-the-loop gates as LangGraph interrupt nodes, cleaner than custom middleware.",
       "Model-agnostic config flag (OpenAI / Claude / Ollama) enabled cost-optimised routing.",
       "React monitoring dashboard for agent traces was critical for debugging production issues.",
     ],
@@ -235,7 +235,7 @@ export const githubRepos = [
   { name: "ai-campaign-engine", displayName: "AI Campaign Engine", description: "Agentic LLM system for generating multi-channel marketing campaign strategies. Built with LangGraph, GPT-4, and Pinecone.", stars: 47, language: "Python", topics: ["langchain", "gpt-4", "fastapi", "agents"], url: "https://github.com/yogesh-chauhan-ai" },
   { name: "competitor-intelligence-agent", displayName: "Competitor Intelligence Agent", description: "Autonomous agent that monitors competitor activity, extracts structured insights via LLM parsing, and delivers daily Slack briefings.", stars: 34, language: "Python", topics: ["qdrant", "celery", "langchain", "scraping"], url: "https://github.com/yogesh-chauhan-ai" },
   { name: "hybrid-rag-pipeline", displayName: "Hybrid RAG Pipeline", description: "Production RAG with BM25 + dense hybrid search, cross-encoder re-ranking, multi-hop reasoning, and Redis caching. 87% domain Q&A accuracy.", stars: 82, language: "Python", topics: ["rag", "pinecone", "openai", "fastapi"], url: "https://github.com/yogesh-chauhan-ai" },
-  { name: "fastapi-ai-toolkit", displayName: "FastAPI AI Toolkit", description: "Reusable toolkit for building production AI APIs — streaming LLM responses, vector search endpoints, auth, rate limiting, and observability.", stars: 61, language: "Python", topics: ["fastapi", "python", "ai", "toolkit"], url: "https://github.com/yogesh-chauhan-ai" },
+  { name: "fastapi-ai-toolkit", displayName: "FastAPI AI Toolkit", description: "Reusable toolkit for building production AI APIs, streaming LLM responses, vector search endpoints, auth, rate limiting, and observability.", stars: 61, language: "Python", topics: ["fastapi", "python", "ai", "toolkit"], url: "https://github.com/yogesh-chauhan-ai" },
   { name: "langgraph-multi-agent", displayName: "LangGraph Multi-Agent Framework", description: "Model-agnostic multi-agent orchestration with tool-calling, persistent memory, parallel execution, and human-in-the-loop approval gates.", stars: 55, language: "Python", topics: ["langgraph", "multi-agent", "llm", "orchestration"], url: "https://github.com/yogesh-chauhan-ai" },
   { name: "vector-search-api", displayName: "Vector Search API", description: "High-performance semantic search API on Qdrant + ElasticSearch with ONNX acceleration. Sub-100ms P99 latency at 2M+ item scale.", stars: 38, language: "Python", topics: ["qdrant", "elasticsearch", "onnx", "kubernetes"], url: "https://github.com/yogesh-chauhan-ai" },
 ];
@@ -243,7 +243,7 @@ export const githubRepos = [
 export const blogPosts = [
   {
     title: "Chain-of-Draft (CoD): The Prompting Technique",
-    excerpt: "Prompt engineering has evolved significantly — from simple one-shot prompts to complex multi-step reasoning methods. CoD forces models to produce explicit minimal reasoning drafts before final output, dramatically improving accuracy on complex tasks while reducing token usage.",
+    excerpt: "Prompt engineering has evolved significantly, from simple one-shot prompts to complex multi-step reasoning methods. CoD forces models to produce explicit minimal reasoning drafts before final output, dramatically improving accuracy on complex tasks while reducing token usage.",
     readTime: "5 min read",
     date: "Mar 27, 2025",
     tags: ["Prompt Engineering", "CoD", "LLM"],
@@ -251,8 +251,8 @@ export const blogPosts = [
     platform: "LinkedIn Newsletter",
   },
   {
-    title: "MCP (Model Context Protocol) — Going to Replace APIs?",
-    excerpt: "In the fast-evolving landscape of AI and LLMs, the strategies we use to enhance model outputs are changing fast. A deep dive into how MCP enables richer, stateful tool-use for AI agents compared to traditional REST API integrations — and what it means for the future of software.",
+    title: "MCP (Model Context Protocol) - Going to Replace APIs?",
+    excerpt: "In the fast-evolving landscape of AI and LLMs, the strategies we use to enhance model outputs are changing fast. A deep dive into how MCP enables richer, stateful tool-use for AI agents compared to traditional REST API integrations, and what it means for the future of software.",
     readTime: "6 min read",
     date: "Mar 2025",
     tags: ["MCP", "AI Agents", "APIs"],
@@ -270,7 +270,7 @@ export const blogPosts = [
   },
   {
     title: "Deep Reinforcement Learning with Stable-Baselines3",
-    excerpt: "Deep Reinforcement Learning has revolutionised how AI systems learn complex behaviours — from mastering Atari games to robotic control. A practical walkthrough of building and training DRL agents using Stable-Baselines3 with Python.",
+    excerpt: "Deep Reinforcement Learning has revolutionised how AI systems learn complex behaviours, from mastering Atari games to robotic control. A practical walkthrough of building and training DRL agents using Stable-Baselines3 with Python.",
     readTime: "8 min read",
     date: "Mar 12, 2025",
     tags: ["Reinforcement Learning", "DRL", "Python"],
@@ -300,14 +300,14 @@ export const skillCategories = [
 
 export const projects = [
   {
-    id: 1, name: "DocuMind — RAG Document Intelligence", shortDesc: "Enterprise RAG pipeline for intelligent document Q&A at scale.",
+    id: 1, name: "DocuMind [RAG Document Intelligence]", shortDesc: "Enterprise RAG pipeline for intelligent document Q&A at scale.",
     image: "assets/images/projects/documind.svg", category: "AI / LLM", role: "Lead AI Engineer", team: "Solo / 2 engineers", duration: "4 months", liveUrl: "",
     description: "An enterprise-grade RAG system capable of ingesting and reasoning over 50,000+ documents. Hybrid search combining dense vector embeddings with BM25, cross-encoder re-ranking, and multi-hop reasoning chains. Achieved 87% accuracy on domain Q&A.",
     responsibilities: ["Designed end-to-end RAG architecture including chunking strategy, embedding pipeline, and retrieval logic","Implemented hybrid dense + sparse search with Pinecone and BM25","Built cross-encoder re-ranking layer boosting precision by 23%","Developed FastAPI service layer with async streaming responses","Set up Redis caching layer reducing latency by 70%"],
     technologies: ["Python","LangChain","Pinecone","OpenAI GPT-4","FastAPI","Redis","Docker","PostgreSQL"],
   },
   {
-    id: 2, name: "AutoAgent — LLM Orchestration Framework", shortDesc: "Multi-agent orchestration with tool-use, memory, and human-in-the-loop.",
+    id: 2, name: "AutoAgent [LLM Orchestration Framework]", shortDesc: "Multi-agent orchestration with tool-use, memory, and human-in-the-loop.",
     image: "assets/images/projects/autoagent.svg", category: "AI / LLM", role: "Senior Backend Engineer", team: "3 engineers", duration: "5 months", liveUrl: "",
     description: "Production multi-agent orchestration on LangGraph. Agents plan tasks, invoke tools, maintain persistent memory, and run parallel sub-agents with human-in-the-loop approval gates.",
     responsibilities: ["Designed agent graph topology using LangGraph's stateful DAG model","Implemented tool-calling abstractions for web search, Python REPL, and external APIs","Built long-term memory persistence with PostgreSQL + pgvector","Developed parallel agent execution with Celery task queues","Created React monitoring dashboard for agent execution traces"],
@@ -321,28 +321,28 @@ export const projects = [
     technologies: ["Python","FastAPI","Qdrant","ElasticSearch","SentenceTransformers","Docker","Kubernetes","ONNX"],
   },
   {
-    id: 4, name: "Texture-Pulse — NLP Analytics", shortDesc: "NLP-driven data intelligence dashboard with Plotly visualisations.",
+    id: 4, name: "Texture-Pulse [NLP Analytics]", shortDesc: "NLP-driven data intelligence dashboard with Plotly visualisations.",
     image: "assets/images/projects/texture.svg", category: "Data / ML", role: "Senior Backend Developer", team: "2 engineers", duration: "6 months", liveUrl: "",
     description: "Data intelligence platform using NLP and engineering pipelines to process text corpora and surface insights. Dashboard load time reduced from 12s to 1.8s.",
     responsibilities: ["Built NLP pipeline for tokenisation, sentiment analysis, and topic modelling","Designed Pandas ETL handling millions of rows","Created 10+ interactive Plotly chart types","Developed Dash application layout and callback architecture","Optimised queries reducing load time from 12s to 1.8s"],
     technologies: ["Python","Dash","Plotly","Pandas","Flask","NLP","spaCy","PostgreSQL"],
   },
   {
-    id: 5, name: "TDSReconciliation — Financial Intelligence", shortDesc: "PySpark reconciliation engine for multinational purchase/sell orders.",
+    id: 5, name: "TDSReconciliation [Financial Intelligence]", shortDesc: "PySpark reconciliation engine for multinational purchase/sell orders.",
     image: "assets/images/projects/tds.svg", category: "Data / ML", role: "Senior Backend Developer", team: "5 engineers", duration: "8 months", liveUrl: "",
-    description: "Large-scale financial reconciliation platform. PySpark processes every purchase and sell order — detecting discrepancies, generating audit trails, and surfacing Power BI intelligence.",
+    description: "Large-scale financial reconciliation platform. PySpark processes every purchase and sell order, detecting discrepancies, generating audit trails, and surfacing Power BI intelligence.",
     responsibilities: ["Built core PySpark reconciliation jobs processing millions of daily transactions","Designed PostgreSQL schema for transaction staging and audit logging","Integrated Power BI Embedded API for in-app dashboards","Implemented automated discrepancy alerting with email/Slack","Contributed to Flask web platform API layer"],
     technologies: ["Python","PySpark","Flask","PostgreSQL","Pandas","Power BI","SQLAlchemy","Celery"],
   },
   {
-    id: 6, name: "Zast — Logistics Management Platform", shortDesc: "Full-stack Django logistics platform with wallet, tracking, and reporting.",
+    id: 6, name: "Zast [Logistics Management Platform]", shortDesc: "Full-stack Django logistics platform with wallet, tracking, and reporting.",
     image: "assets/images/projects/zast.svg", category: "Web App", role: "Senior Backend Developer", team: "11 engineers", duration: "12 months", liveUrl: "",
     description: "Comprehensive Django logistics web app with wallet facility, real-time parcel tracking, multi-type booking workflows, role-based dashboards, and reporting.",
     responsibilities: ["Architected Django models and DRF API for bookings, wallets, and tracking","Implemented real-time tracking with Django Channels WebSockets","Designed reporting engine generating PDF/Excel via Celery","Led code reviews and maintained Swagger API docs","Collaborated with React team on API contracts"],
     technologies: ["Python","Django","Django REST Framework","React.js","PostgreSQL","Celery","Redis","WebSockets"],
   },
   {
-    id: 7, name: "ChargeSavvy — POS System", shortDesc: "Backend for a UK/USA POS system active across 700+ locations.",
+    id: 7, name: "ChargeSavvy [POS System]", shortDesc: "Backend for a UK/USA POS system active across 700+ locations.",
     image: "assets/images/projects/chargesavvy.svg", category: "Web App", role: "Backend Developer", team: "12 engineers", duration: "10 months", liveUrl: "",
     description: "Backend for ChargeSavvy POS covering 700+ motels and restaurants across UK and USA. High-throughput transaction processing with 99.9% uptime.",
     responsibilities: ["Developed Django REST APIs for menu, orders, and transaction processing","Implemented Stripe/Square payment integrations with webhook handling","Built inventory sync APIs for web and iOS clients","Wrote test suites achieving 85%+ code coverage","Participated in on-call rotation for production uptime SLAs"],
@@ -352,14 +352,14 @@ export const projects = [
     id: 8, name: "Assessment Platform", shortDesc: "Online assessment with MS Teams & WebEx scheduling integration.",
     image: "assets/images/projects/assessment.svg", category: "Web App", role: "Senior Backend Developer", team: "Solo", duration: "3 months", liveUrl: "",
     description: "Django-based online assessment system with MS Teams and WebEx integration for scheduling, auto-scoring, and PDF report generation.",
-    responsibilities: ["Designed complete Django models and DRF API — solo end-to-end delivery","Integrated MS Teams Graph API and WebEx REST API","Built automated scoring engine with configurable thresholds","Implemented student/teacher role separation via Django permissions","Developed PDF report generation using WeasyPrint"],
+    responsibilities: ["Designed complete Django models and DRF API, solo end-to-end delivery","Integrated MS Teams Graph API and WebEx REST API","Built automated scoring engine with configurable thresholds","Implemented student/teacher role separation via Django permissions","Developed PDF report generation using WeasyPrint"],
     technologies: ["Python","Django","Django REST API","MS Teams Graph API","WebEx API","PostgreSQL","WeasyPrint"],
   },
   {
-    id: 9, name: "MediaCom — Linguistics Analytics API", shortDesc: "Neural linguistics data analysis API for media intelligence clients.",
+    id: 9, name: "MediaCom [Linguistics Analytics API]", shortDesc: "Neural linguistics data analysis API for media intelligence clients.",
     image: "assets/images/projects/mediacom.svg", category: "Data / ML", role: "Backend Developer", team: "3 engineers", duration: "5 months", liveUrl: "",
     description: "Linguistics data analysis app holding neural data across news models for media clients. Query response times reduced 60%, slow queries cut 80%.",
-    responsibilities: ["Owned API layer — designed and optimised all DRF serialisers","Implemented queryset optimisations reducing response times 60%","Built data normalisation pipeline for multiple NLP model outputs","Wrote API docs and maintained Postman collection","Introduced indexing strategy cutting slow queries by 80%"],
+    responsibilities: ["Owned API layer, designed and optimised all DRF serialisers","Implemented queryset optimisations reducing response times 60%","Built data normalisation pipeline for multiple NLP model outputs","Wrote API docs and maintained Postman collection","Introduced indexing strategy cutting slow queries by 80%"],
     technologies: ["Python","Django","Django REST API","PostgreSQL","Pandas","NLP","Redis"],
   },
 ];
