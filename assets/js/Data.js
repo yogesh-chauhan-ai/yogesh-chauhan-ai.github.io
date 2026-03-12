@@ -5,7 +5,7 @@ export const UserData = {
   phone: "+91 8905508909",
   email: "info.yogesh2848@gmail.com",
   location: "Ahmedabad, Gujarat, India",
-  website: "https://yogesh-chauhan-ai.github.io",
+  website: "https://www.pysquad.com",
   linkedin: "https://www.linkedin.com/in/yogesh-python-ai",
   github: "https://github.com/yogesh-chauhan-ai",
   cvFile: "assets/Yogesh_Python_CV.pdf",
