@@ -304,6 +304,7 @@ main {
   flex-direction: column;
   gap: 18px;
   min-width: 0;
+  overflow: visible;
 }
 
 /* ============================================================
@@ -319,8 +320,8 @@ main {
   justify-content: space-between;
   box-shadow: var(--shadow-sm);
   position: sticky;
-  top: 28px;
-  z-index: 50;
+  top: 14px;
+  z-index: 100;
 }
 
 .nav-list {
@@ -1254,9 +1255,11 @@ main {
   .project-grid { grid-template-columns: 1fr; }
   .about-stats { grid-template-columns: repeat(2, 1fr); }
   .form-row { grid-template-columns: 1fr; }
-  .nav-link { font-size: 12px; padding: 6px 10px; }
+  .nav-link { font-size: 11px; padding: 6px 8px; }
   .btn-inquiry { display: none; }
   .modal-meta-row { grid-template-columns: 1fr 1fr; }
+  .nav-list { gap: 0; flex-wrap: nowrap; }
+  .navbar { padding: 6px 8px; top: 10px; overflow: visible; }
 }
 
 
