@@ -4,7 +4,7 @@ export const UserData = {
   designation: "Senior Python Developer · AI/ML Engineer",
   phone: "+91 8905508909",
   email: "info.yogesh2848@gmail.com",
-  location: "Ahmedabad, Gujarat, India",
+  location: "India",
   website: "https://www.pysquad.com",
   linkedin: "https://www.linkedin.com/in/yogesh-python-ai",
   github: "https://github.com/yogesh-chauhan-ai",
@@ -45,7 +45,7 @@ export const education = [
 export const experience = [
   {
     designation: "Development Team Lead", company: "PySquad Informatics LLP",
-    year: "Mar 2023 – Present · 3 yrs 1 mo", location: "Ahmedabad, Gujarat, India · On-site",
+    year: "Mar 2023 – Present · 5 yrs 1 mo", location: "Gujarat, India · On-site",
     points: [
       "Driving innovative AI solutions with expertise in Python, data analysis, and AI frameworks.",
       "Leading high-performing teams, delivering scalable projects, and transforming ideas into impactful applications.",
@@ -65,7 +65,7 @@ export const experience = [
   },
   {
     designation: "Python Developer", company: "Treesha Infotech",
-    year: "Jun 2020 – Jun 2021 · 1 yr", location: "Ahmedabad, Gujarat, India",
+    year: "Jun 2020 – Jun 2021 · 1 yr", location: "Gujarat, India",
     points: [
       "Developed and maintained Django web applications for enterprise clients.",
       "Implemented REST APIs and third-party integrations.",
