@@ -100,6 +100,7 @@
           <li><button class="nav-link" data-nav-link>AI Systems</button></li>
           <li><button class="nav-link" data-nav-link>Resume</button></li>
           <li><button class="nav-link" data-nav-link>Portfolio</button></li>
+          <li><button class="nav-link" data-nav-link>Open Source</button></li>
           <li><button class="nav-link" data-nav-link>Contact</button></li>
         </ul>
         <button class="btn-inquiry" id="inquiryNavBtn">
@@ -312,7 +313,7 @@
       <article class="page" data-page="portfolio">
         <header class="page-header">
           <h2 class="page-title">Portfolio</h2>
-          <p class="page-subtitle">9 projects across AI/LLM, Data Engineering &amp; Web Applications</p>
+          <p class="page-subtitle">10 projects across AI/LLM, Data Engineering &amp; Web Applications</p>
         </header>
         <div class="filter-row">
           <button class="filter-btn active" data-filter="all">All</button>
@@ -321,6 +322,52 @@
           <button class="filter-btn" data-filter="Web App">Web App</button>
         </div>
         <ul class="project-grid" id="projectGrid"></ul>
+      </article>
+
+      <!-- ========= OPEN SOURCE ========= -->
+      <article class="page" data-page="open source">
+        <header class="page-header">
+          <div>
+            <h2 class="page-title">Open Source</h2>
+            <p class="page-subtitle">Libraries, tools &amp; platforms I've built and published for the community</p>
+          </div>
+        </header>
+
+        <!-- Stats bar -->
+        <div class="oss-stats-row">
+          <div class="oss-stat">
+            <span class="oss-stat-num">2</span>
+            <span class="oss-stat-label">PyPI Packages</span>
+          </div>
+          <div class="oss-stat-div"></div>
+          <div class="oss-stat">
+            <span class="oss-stat-num">1</span>
+            <span class="oss-stat-label">Live Platform</span>
+          </div>
+          <div class="oss-stat-div"></div>
+          <div class="oss-stat">
+            <span class="oss-stat-num">MIT</span>
+            <span class="oss-stat-label">License</span>
+          </div>
+          <div class="oss-stat-div"></div>
+          <div class="oss-stat">
+            <span class="oss-stat-num">Django</span>
+            <span class="oss-stat-label">Primary Framework</span>
+          </div>
+        </div>
+
+        <!-- Contributions grid -->
+        <section class="section" style="margin-top:0">
+          <div class="oss-grid" id="ossGrid"></div>
+        </section>
+
+        <!-- GitHub CTA -->
+        <div style="text-align:center;margin-top:8px;margin-bottom:8px">
+          <a href="https://github.com/yogesh-chauhan-ai" target="_blank" class="btn-outline" style="display:inline-flex">
+            <ion-icon name="logo-github"></ion-icon>
+            View all on GitHub
+          </a>
+        </div>
       </article>
 
       <!-- ========= CONTACT ========= -->
@@ -382,7 +429,10 @@
                 Submit an Inquiry
               </h3>
               <p class="inquiry-sub">Fill in the form below and I'll get back to you within 24 hours.</p>
-              <form class="inquiry-form" id="inquiryForm" data-form action="https://formspree.io/f/mzdjrped" method="POST">
+              <form class="inquiry-form" id="inquiryForm" data-form action="https://formsubmit.co/el/dibace" method="POST">
+                <input type="hidden" name="_subject" value="New Inquiry from Portfolio" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
                 <div class="form-row">
                   <div class="form-field">
                     <label class="form-label">Full Name <span class="req">*</span></label>
@@ -481,7 +531,10 @@
         <button class="modal-close-btn" id="inquiryModalClose"><ion-icon name="close-outline"></ion-icon></button>
       </div>
       <div class="modal-body">
-        <form class="inquiry-form" id="inquiryModalForm" action="https://formspree.io/f/mzdjrped" method="POST">
+        <form class="inquiry-form" id="inquiryModalForm" action="https://formsubmit.co/el/dibace" method="POST">
+          <input type="hidden" name="_subject" value="New Inquiry from Portfolio" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
           <div class="form-field">
             <label class="form-label">Full Name <span class="req">*</span></label>
             <input type="text" name="name" class="form-input" placeholder="Your Name" required />

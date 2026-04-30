@@ -3,7 +3,8 @@
 import {
   UserData, profile, services, techStack,
   education, experience, skills, projects,
-  aiSystems, liveDemos, caseStudies, githubRepos, blogPosts, skillCategories
+  aiSystems, liveDemos, caseStudies, githubRepos, blogPosts, skillCategories,
+  openSourceContributions
 } from "./Data.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -63,6 +64,11 @@ document.addEventListener("DOMContentLoaded", () => {
             <ion-icon name="git-branch-outline"></ion-icon>
             Architecture
           </button>
+          ${sys.demoUrl && sys.demoUrl !== "#" && sys.demoUrl !== "#demos" ? `
+          <a href="${sys.demoUrl}" target="_blank" rel="noopener" class="ai-sys-btn ai-sys-btn-live">
+            <ion-icon name="open-outline"></ion-icon>
+            Live Project
+          </a>` : ""}
         </div>`;
       aiSystemsGrid.appendChild(li);
     });
@@ -651,6 +657,62 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================================================
+  // RENDER: Open Source Contributions
+  // =========================================================
+  const ossGrid = document.getElementById("ossGrid");
+  if (ossGrid) {
+    openSourceContributions.forEach(contrib => {
+      const badgeClass = contrib.badge === "PyPI" ? "oss-badge-pypi" : "oss-badge-platform";
+      const statusKey = contrib.status.toLowerCase();
+      const statusClass = statusKey === "stable" ? "oss-status-stable" : statusKey === "beta" ? "oss-status-beta" : "oss-status-live";
+
+      const installHtml = contrib.install ? `
+        <div class="oss-install">
+          <span class="oss-install-prompt">$</span>
+          <span class="oss-install-cmd">${contrib.install}</span>
+          <button class="oss-copy-btn" data-copy="${contrib.install}" title="Copy to clipboard">
+            <ion-icon name="copy-outline"></ion-icon>
+          </button>
+        </div>` : "";
+
+      const linksHtml = [
+        contrib.pypiUrl   ? `<a href="${contrib.pypiUrl}" target="_blank" rel="noopener" class="oss-link-btn oss-link-pypi"><ion-icon name="cube-outline"></ion-icon>PyPI</a>` : "",
+        contrib.githubUrl ? `<a href="${contrib.githubUrl}" target="_blank" rel="noopener" class="oss-link-btn oss-link-github"><ion-icon name="logo-github"></ion-icon>GitHub</a>` : "",
+        contrib.liveUrl   ? `<a href="${contrib.liveUrl}" target="_blank" rel="noopener" class="oss-link-btn oss-link-live"><ion-icon name="open-outline"></ion-icon>Live Site</a>` : "",
+      ].join("");
+
+      const card = document.createElement("div");
+      card.classList.add("oss-card");
+      card.innerHTML = `
+        <div class="oss-card-header">
+          <div class="oss-card-title-row">
+            <span class="oss-card-name">${contrib.name}</span>
+            <span class="oss-badge ${badgeClass}">${contrib.badge}</span>
+            ${contrib.version ? `<span class="oss-version">v${contrib.version}</span>` : ""}
+          </div>
+          <span class="oss-status-pill ${statusClass}">${contrib.status}</span>
+        </div>
+        <p class="oss-desc">${contrib.description}</p>
+        <div class="oss-tags">
+          ${contrib.tags.map(t => `<span class="oss-tag">${t}</span>`).join("")}
+        </div>
+        ${installHtml}
+        <div class="oss-card-footer">${linksHtml}</div>`;
+      ossGrid.appendChild(card);
+    });
+
+    // Copy to clipboard
+    ossGrid.addEventListener("click", e => {
+      const btn = e.target.closest("[data-copy]");
+      if (!btn) return;
+      navigator.clipboard.writeText(btn.dataset.copy).then(() => {
+        const icon = btn.querySelector("ion-icon");
+        if (icon) { icon.setAttribute("name", "checkmark-outline"); setTimeout(() => icon.setAttribute("name", "copy-outline"), 1800); }
+      });
+    });
+  }
+
+  // =========================================================
   // CV DOWNLOAD MODAL
   // =========================================================
   const cvModal = document.getElementById("cvModal");
@@ -694,13 +756,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("inquiryModalForm").addEventListener("submit", async e => {
     e.preventDefault();
-    const data = new FormData(e.target);
-    const res = await fetch("https://formspree.io/f/mzdjrped", { method: "POST", body: data, headers: { Accept: "application/json" } });
-    if (res.ok) {
-      e.target.style.display = "none";
-      document.getElementById("inquirySuccess").style.display = "flex";
-      setTimeout(() => { e.target.style.display = "flex"; document.getElementById("inquirySuccess").style.display = "none"; e.target.reset(); closeModal(inquiryModal); }, 3000);
-    } else { alert("Something went wrong. Please try again."); }
+    const form = e.target;
+    const submitBtn = form.querySelector("button[type=submit]");
+    const originalText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `<ion-icon name="hourglass-outline"></ion-icon> Sending...`;
+    const data = new FormData(form);
+    data.append("_subject", "New Inquiry — Yogesh Portfolio");
+    data.append("_captcha", "false");
+    data.append("_template", "table");
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/info.yogesh2848@gmail.com", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" }
+      });
+      const json = await res.json();
+      if (json.success === "true" || json.success === true) {
+        form.style.display = "none";
+        document.getElementById("inquirySuccess").style.display = "flex";
+        setTimeout(() => {
+          form.style.display = "flex";
+          document.getElementById("inquirySuccess").style.display = "none";
+          form.reset();
+          closeModal(inquiryModal);
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }, 3000);
+      } else {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        alert("Something went wrong. Please try again.");
+      }
+    } catch {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalText;
+      alert("Something went wrong. Please try again.");
+    }
   });
 
   // Contact page form
@@ -711,13 +803,39 @@ document.addEventListener("DOMContentLoaded", () => {
     formInputs.forEach(inp => inp.addEventListener("input", () => { formBtn.disabled = !contactPageForm.checkValidity(); }));
     contactPageForm.addEventListener("submit", async e => {
       e.preventDefault();
+      const originalText = formBtn.innerHTML;
+      formBtn.disabled = true;
+      formBtn.innerHTML = `<ion-icon name="hourglass-outline"></ion-icon> Sending...`;
       const data = new FormData(contactPageForm);
-      const res = await fetch("https://formspree.io/f/mzdjrped", { method: "POST", body: data, headers: { Accept: "application/json" } });
-      if (res.ok) {
-        formBtn.innerHTML = `<ion-icon name="checkmark-outline"></ion-icon> Sent!`;
-        formBtn.style.background = "var(--success)";
-        setTimeout(() => { formBtn.innerHTML = `<ion-icon name="paper-plane-outline"></ion-icon> Send Message`; formBtn.style.background = ""; contactPageForm.reset(); formBtn.disabled = true; }, 3000);
-      } else { alert("Something went wrong. Please try again."); }
+      data.append("_subject", "New Inquiry — Yogesh Portfolio");
+      data.append("_captcha", "false");
+      data.append("_template", "table");
+      try {
+        const res = await fetch("https://formsubmit.co/ajax/info.yogesh2848@gmail.com", {
+          method: "POST",
+          body: data,
+          headers: { Accept: "application/json" }
+        });
+        const json = await res.json();
+        if (json.success === "true" || json.success === true) {
+          formBtn.innerHTML = `<ion-icon name="checkmark-outline"></ion-icon> Sent!`;
+          formBtn.style.background = "var(--success)";
+          setTimeout(() => {
+            formBtn.innerHTML = `<ion-icon name="paper-plane-outline"></ion-icon> Send Message`;
+            formBtn.style.background = "";
+            contactPageForm.reset();
+            formBtn.disabled = true;
+          }, 3000);
+        } else {
+          formBtn.disabled = false;
+          formBtn.innerHTML = originalText;
+          alert("Something went wrong. Please try again.");
+        }
+      } catch {
+        formBtn.disabled = false;
+        formBtn.innerHTML = originalText;
+        alert("Something went wrong. Please try again.");
+      }
     });
   }
 
