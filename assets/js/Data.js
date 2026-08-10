@@ -74,4 +74,11 @@ export const projects = [
     responsibilities: ["Built AI-based document handling workflows for hospital insurance claims", "Automated process steps for an ABDM-compliant, FHIR R4 platform", "Reduced a three-hour manual process to roughly twenty minutes"],
     technologies: ["Python", "Document AI", "Process Automation", "FHIR R4"],
   },
+  {
+    id: 11, name: "MarinaPy [Marina Management & Slip Booking SaaS]", shortDesc: "Cloud SaaS for marina management & slip booking, used by marinas internationally.",
+    image: "assets/images/projects/marinapy.svg", category: "Web App", role: "Technical Architect / Product Owner / Delivery Head", team: "8 engineers", duration: "Ongoing", liveUrl: "https://marinapy.com",
+    description: "Cloud-based SaaS platform for marina management and slip booking covering the full operational stack — interactive marina maps with real-time occupancy, booking and berth allocation, CRM, quoting and invoicing, online payments, yard operations, and a self-service boater app. I own the architecture and technical direction for a product now used by marinas internationally.",
+    responsibilities: ["Led architecture and technical direction as technical architect, product owner, and delivery head", "Led a team of 8 building the full operational stack", "Designed interactive marina maps with real-time berth occupancy", "Built booking, berth allocation, CRM, quoting, and invoicing modules", "Delivered online payments, yard operations, and a self-service boater app"],
+    technologies: ["Python", "Django", "PostgreSQL", "PostGIS", "Real-time Maps", "Payments"],
+  },
 ];
