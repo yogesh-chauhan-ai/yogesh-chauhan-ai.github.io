@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff5f5"/>
+      <stop offset="100%" style="stop-color:#ffecec"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e4002b"/>
+      <stop offset="100%" style="stop-color:#f87171"/>
+    </linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#e4002b" flood-opacity="0.12"/></filter>
+  </defs>
+  <rect width="480" height="300" fill="url(#bg)"/>
+  <rect x="0" y="0" width="480" height="4" fill="url(#accent)"/>
+
+  <g filter="url(#s)">
+    <rect x="16" y="16" width="448" height="34" rx="8" fill="white" stroke="#fecaca" stroke-width="1"/>
+    <text x="30" y="30" font-size="9" fill="#1e293b" font-family="sans-serif" font-weight="bold">AIRTEL — FTTH SUBSCRIBER SYSTEMS</text>
+    <text x="30" y="42" font-size="8" fill="#94a3b8" font-family="sans-serif">Fiber to the Home · Large-scale Delivery</text>
+  </g>
+
+  <g filter="url(#s)">
+    <rect x="16" y="62" width="448" height="100" rx="8" fill="white" stroke="#fecaca" stroke-width="1"/>
+    <text x="30" y="82" font-size="8.5" fill="#1e293b" font-family="sans-serif" font-weight="bold">SUBSCRIBER DATABASE — NATIONWIDE ROLLOUT</text>
+    <circle cx="70" cy="120" r="10" fill="#e4002b" opacity="0.8"/>
+    <circle cx="110" cy="105" r="7" fill="#e4002b" opacity="0.6"/>
+    <circle cx="140" cy="130" r="9" fill="#e4002b" opacity="0.7"/>
+    <circle cx="180" cy="110" r="6" fill="#e4002b" opacity="0.5"/>
+    <circle cx="215" cy="128" r="8" fill="#e4002b" opacity="0.65"/>
+    <circle cx="255" cy="108" r="10" fill="#e4002b" opacity="0.8"/>
+    <circle cx="295" cy="132" r="7" fill="#e4002b" opacity="0.6"/>
+    <circle cx="330" cy="112" r="9" fill="#e4002b" opacity="0.7"/>
+    <circle cx="370" cy="128" r="6" fill="#e4002b" opacity="0.5"/>
+    <circle cx="405" cy="106" r="8" fill="#e4002b" opacity="0.65"/>
+    <text x="440" y="148" text-anchor="end" font-size="7" fill="#94a3b8" font-family="sans-serif">Large-scale Indian subscriber base</text>
+  </g>
+
+  <g filter="url(#s)">
+    <rect x="16" y="176" width="216" height="106" rx="8" fill="white" stroke="#fecaca" stroke-width="1"/>
+    <text x="30" y="196" font-size="8.5" fill="#1e293b" font-family="sans-serif" font-weight="bold">PYTHON WORKSTREAMS</text>
+    <text x="30" y="214" font-size="7.5" fill="#475569" font-family="sans-serif">▪ Provisioning services</text>
+    <text x="30" y="230" font-size="7.5" fill="#475569" font-family="sans-serif">▪ Subscriber data pipelines</text>
+    <text x="30" y="246" font-size="7.5" fill="#475569" font-family="sans-serif">▪ On-time delivery ownership</text>
+    <text x="30" y="266" font-size="7" fill="#94a3b8" font-family="sans-serif">Python · Server Operations</text>
+  </g>
+  <g filter="url(#s)">
+    <rect x="248" y="176" width="200" height="106" rx="8" fill="white" stroke="#fecaca" stroke-width="1"/>
+    <text x="262" y="196" font-size="8.5" fill="#1e293b" font-family="sans-serif" font-weight="bold">SERVER OPERATIONS</text>
+    <text x="262" y="214" font-size="7.5" fill="#475569" font-family="sans-serif">Managed alongside delivery team</text>
+    <text x="262" y="230" font-size="7.5" fill="#475569" font-family="sans-serif">Responsible for owned components</text>
+    <text x="262" y="256" font-size="7" fill="#94a3b8" font-family="sans-serif">Large-scale Databases</text>
+  </g>
+</svg>

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f4ff"/>
+      <stop offset="100%" style="stop-color:#e8edff"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a56db"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1a56db" flood-opacity="0.12"/></filter>
+  </defs>
+  <rect width="480" height="300" fill="url(#bg)"/>
+  <rect x="0" y="0" width="480" height="4" fill="url(#accent)"/>
+
+  <g filter="url(#s)">
+    <rect x="16" y="16" width="448" height="34" rx="8" fill="white" stroke="#c7d2fe" stroke-width="1"/>
+    <text x="30" y="30" font-size="9" fill="#1e293b" font-family="sans-serif" font-weight="bold">NIVA — AGENTIC AI CHATBOT PLATFORM</text>
+    <text x="30" y="42" font-size="8" fill="#94a3b8" font-family="sans-serif">Aviation &amp; Logistics · getniva.ai</text>
+  </g>
+
+  <g filter="url(#s)">
+    <rect x="16" y="62" width="140" height="70" rx="8" fill="white" stroke="#c7d2fe" stroke-width="1"/>
+    <text x="86" y="92" text-anchor="middle" font-size="20" fill="#1a56db" font-family="Georgia,serif" font-weight="bold">100+</text>
+    <text x="86" y="108" text-anchor="middle" font-size="8" fill="#94a3b8" font-family="sans-serif">Paying Users</text>
+  </g>
+  <g filter="url(#s)">
+    <rect x="164" y="62" width="140" height="70" rx="8" fill="white" stroke="#c7d2fe" stroke-width="1"/>
+    <text x="234" y="92" text-anchor="middle" font-size="20" fill="#7c3aed" font-family="Georgia,serif" font-weight="bold">102</text>
+    <text x="234" y="108" text-anchor="middle" font-size="8" fill="#94a3b8" font-family="sans-serif">Use-Case Library</text>
+  </g>
+  <g filter="url(#s)">
+    <rect x="312" y="62" width="152" height="70" rx="8" fill="white" stroke="#c7d2fe" stroke-width="1"/>
+    <text x="388" y="92" text-anchor="middle" font-size="16" fill="#059669" font-family="Georgia,serif" font-weight="bold">4-Tier</text>
+    <text x="388" y="108" text-anchor="middle" font-size="8" fill="#94a3b8" font-family="sans-serif">Pricing Model</text>
+  </g>
+
+  <g filter="url(#s)">
+    <rect x="16" y="144" width="448" height="138" rx="8" fill="white" stroke="#c7d2fe" stroke-width="1"/>
+    <text x="30" y="164" font-size="8.5" fill="#1e293b" font-family="sans-serif" font-weight="bold">ISPIA ARCHITECTURE FRAMEWORK</text>
+    <circle cx="70" cy="210" r="26" fill="url(#accent)" opacity="0.15"/>
+    <circle cx="70" cy="210" r="26" fill="none" stroke="url(#accent)" stroke-width="2"/>
+    <text x="70" y="214" text-anchor="middle" font-size="8" fill="#1a56db" font-family="sans-serif" font-weight="bold">Core</text>
+    <line x1="96" y1="210" x2="150" y2="188" stroke="#c7d2fe" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <line x1="96" y1="210" x2="150" y2="210" stroke="#c7d2fe" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <line x1="96" y1="210" x2="150" y2="232" stroke="#c7d2fe" stroke-width="1.5" stroke-dasharray="3 2"/>
+    <rect x="150" y="176" width="110" height="24" rx="6" fill="#eef2ff"/>
+    <text x="205" y="192" text-anchor="middle" font-size="7.5" fill="#4338ca" font-family="sans-serif">Bot Personas</text>
+    <rect x="150" y="198" width="110" height="24" rx="6" fill="#eef2ff"/>
+    <text x="205" y="214" text-anchor="middle" font-size="7.5" fill="#4338ca" font-family="sans-serif">Flow Engine</text>
+    <rect x="150" y="220" width="110" height="24" rx="6" fill="#eef2ff"/>
+    <text x="205" y="236" text-anchor="middle" font-size="7.5" fill="#4338ca" font-family="sans-serif">Webhook Layer</text>
+    <rect x="278" y="176" width="172" height="68" rx="6" fill="#f8fafc"/>
+    <text x="290" y="192" font-size="7.5" fill="#475569" font-family="sans-serif">White-label · Embeddable</text>
+    <text x="290" y="206" font-size="7.5" fill="#475569" font-family="sans-serif">Single script-tag install</text>
+    <text x="290" y="220" font-size="7.5" fill="#475569" font-family="sans-serif">RAG-backed responses</text>
+    <text x="290" y="234" font-size="7.5" fill="#475569" font-family="sans-serif">Cross-session memory</text>
+    <text x="30" y="270" font-size="7.5" fill="#94a3b8" font-family="sans-serif">Python · LLMs · RAG Pipelines · FastAPI · Multi-Agent Orchestration</text>
+  </g>
+</svg>

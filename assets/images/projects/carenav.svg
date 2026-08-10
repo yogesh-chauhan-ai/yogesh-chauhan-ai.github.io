@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" width="480" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ecfeff"/>
+      <stop offset="100%" style="stop-color:#cffafe"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0891b2"/>
+      <stop offset="100%" style="stop-color:#22d3ee"/>
+    </linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0891b2" flood-opacity="0.12"/></filter>
+  </defs>
+  <rect width="480" height="300" fill="url(#bg)"/>
+  <rect x="0" y="0" width="480" height="4" fill="url(#accent)"/>
+
+  <g filter="url(#s)">
+    <rect x="16" y="16" width="448" height="34" rx="8" fill="white" stroke="#a5f3fc" stroke-width="1"/>
+    <text x="30" y="30" font-size="9" fill="#1e293b" font-family="sans-serif" font-weight="bold">CARENAV — AI DOCUMENT AUTOMATION</text>
+    <text x="30" y="42" font-size="8" fill="#94a3b8" font-family="sans-serif">Hospital Insurance Claims · ABDM · FHIR R4 · carenavindia.ai</text>
+  </g>
+
+  <g filter="url(#s)">
+    <rect x="16" y="62" width="448" height="100" rx="8" fill="white" stroke="#a5f3fc" stroke-width="1"/>
+    <text x="30" y="82" font-size="8.5" fill="#1e293b" font-family="sans-serif" font-weight="bold">MANUAL PROCESS → AUTOMATED WORKFLOW</text>
+    <rect x="30" y="96" width="140" height="46" rx="6" fill="#fef2f2"/>
+    <text x="100" y="116" text-anchor="middle" font-size="16" fill="#dc2626" font-family="Georgia,serif" font-weight="bold">3 hrs</text>
+    <text x="100" y="132" text-anchor="middle" font-size="7.5" fill="#94a3b8" font-family="sans-serif">Manual process</text>
+    <text x="182" y="122" font-size="14" fill="#0891b2">→</text>
+    <rect x="200" y="96" width="140" height="46" rx="6" fill="#ecfeff"/>
+    <text x="270" y="116" text-anchor="middle" font-size="16" fill="#0891b2" font-family="Georgia,serif" font-weight="bold">~20 min</text>
+    <text x="270" y="132" text-anchor="middle" font-size="7.5" fill="#94a3b8" font-family="sans-serif">Automated</text>
+    <rect x="356" y="96" width="92" height="46" rx="6" fill="#f8fafc"/>
+    <text x="402" y="116" text-anchor="middle" font-size="8" fill="#475569" font-family="sans-serif" font-weight="bold">ABDM</text>
+    <text x="402" y="130" text-anchor="middle" font-size="8" fill="#475569" font-family="sans-serif" font-weight="bold">FHIR R4</text>
+  </g>
+
+  <g filter="url(#s)">
+    <rect x="16" y="176" width="448" height="106" rx="8" fill="white" stroke="#a5f3fc" stroke-width="1"/>
+    <text x="30" y="196" font-size="8.5" fill="#1e293b" font-family="sans-serif" font-weight="bold">DOCUMENT HANDLING WORKFLOW</text>
+    <text x="30" y="216" font-size="7.5" fill="#475569" font-family="sans-serif">▪ Claim document ingestion &amp; classification</text>
+    <text x="30" y="232" font-size="7.5" fill="#475569" font-family="sans-serif">▪ Automated data extraction &amp; validation</text>
+    <text x="30" y="248" font-size="7.5" fill="#475569" font-family="sans-serif">▪ ABDM-compliant, FHIR R4 record handling</text>
+    <text x="30" y="266" font-size="7" fill="#94a3b8" font-family="sans-serif">Python · Document AI · Process Automation · FHIR R4</text>
+  </g>
+</svg>
